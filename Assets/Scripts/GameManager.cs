@@ -1,25 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public bool debugMode = false;
     [Range(1, 120)]
-    public int frameDelay = 12; // num frames to wait between each instance of new agent
+    public int frameDelay = 15; // num frames to wait between each instance of new agent
     private int delay = 0;
     [SerializeField, Range(0, 1f)]
     private float randomOffset = 0.1f;
     public GameObject agent;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
+    private GameObject agentContainer;
+    private Text agentCounter;
 
+    // Start is called before the first frame update
+    void Start() {
+        agentContainer = GameObject.Find("Agent Container");
+        agentCounter = GameObject.Find("Agent Counter").GetComponent<Text>();
+
+        UpdateAgentCount();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (debugMode && Input.GetMouseButton(0)) {
             /* If debug mode is enabled and left mouse button pressed, create new agents at mouse position: */
             delay -= 1;
@@ -28,9 +32,17 @@ public class GameManager : MonoBehaviour {
                 newPos.x += Random.Range(-randomOffset, randomOffset);
                 newPos.y += Random.Range(-randomOffset, randomOffset);
                 newPos.z = 0f;
-                Instantiate(agent, newPos, Quaternion.identity);
+                GameObject clone = Instantiate(agent, newPos, Quaternion.identity);
+                clone.transform.parent = agentContainer.transform;
                 delay = frameDelay;
+
+                UpdateAgentCount();
             }
         }
+    }
+
+    public void UpdateAgentCount() {
+        int maxCt = 100; // temp
+        agentCounter.text = "Agents: " + agentContainer.transform.childCount.ToString("D3") + "/" + maxCt.ToString(); // convert number of agents to string with leading zeroes
     }
 }
