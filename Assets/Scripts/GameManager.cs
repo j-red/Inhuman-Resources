@@ -14,8 +14,26 @@ public class GameManager : MonoBehaviour {
     private GameObject agentContainer;
     private Text agentCounter;
 
+    private Camera cam;
+    private Vector3 camPos;
+
+    private float targetSize;
+    [SerializeField, Range(0, 10f)]
+    private float zoomScalar = 3f;
+    [SerializeField, Range(0, 0.5f)]
+    private float dragScale = 0.02f;
+    [SerializeField, Range(0, 10f)]
+    private float zoomSpeed = 5f;
+
+    private Vector3 mouseStart, mouseDelta;
+
     // Start is called before the first frame update
     void Start() {
+        cam = Camera.main;
+        camPos = cam.transform.position;
+
+        targetSize = cam.orthographicSize;
+
         agentContainer = GameObject.Find("Agent Container");
         agentCounter = GameObject.Find("Agent Counter").GetComponent<Text>();
 
@@ -39,10 +57,27 @@ public class GameManager : MonoBehaviour {
                 UpdateAgentCount();
             }
         }
+
+        /* Mouse Zoom and Camera Drag */
+        targetSize -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar;
+        if (Input.GetButtonDown("Tertiary")) { /* When Middle Mouse is pressed: */
+            mouseStart = Input.mousePosition;
+            camPos = cam.transform.position;
+        } else if (Input.GetButton("Tertiary")) { // Middle mouse held down:
+            mouseDelta = Input.mousePosition - mouseStart;
+            cam.transform.position = camPos - mouseDelta * dragScale;
+        }
+        
     }
 
     public void UpdateAgentCount() {
         int maxCt = 100; // temp
         agentCounter.text = "Agents: " + agentContainer.transform.childCount.ToString("D3") + "/" + maxCt.ToString(); // convert number of agents to string with leading zeroes
+    }
+
+    void LateUpdate() {
+        float minScale = 1f, maxScale = 12f;
+        targetSize = Mathf.Clamp(targetSize, minScale, maxScale);
+        cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, targetSize, zoomSpeed);
     }
 }

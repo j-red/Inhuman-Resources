@@ -17,6 +17,9 @@ public class AgentController : MonoBehaviour {
 
     public float grav = 0f;
 
+    public enum AgentMoveType { Velocity, Position, Thrust, Torque };
+    public AgentMoveType agentMoveType;
+
     [SerializeField]
     private bool debugMode = false;
 
@@ -35,13 +38,23 @@ public class AgentController : MonoBehaviour {
 
         float movement = x * speed;
         
-        // rb.velocity = new Vector2(movement, rb.velocity.y - grav); // A: update velocity directly -- works well for horizontal movement, but not for airborne/vertical
-        
-        // Vector2 velocity = new Vector2(x * speed * Time.fixedDeltaTime, 0); // B: use Rigidbody2D.MovePosition -- not smooth
-        // rb.MovePosition(rb.position + velocity); 
-
-        Vector2 thrust = new Vector2(movement, -grav); // C: 
-        rb.AddForce(thrust * Time.deltaTime * speed, ForceMode2D.Impulse);
+        switch (agentMoveType) {
+            case AgentMoveType.Velocity:
+                rb.velocity = new Vector2(movement, rb.velocity.y - grav); // A: update velocity directly -- works well for horizontal movement, but not for airborne/vertical
+                break;
+            case AgentMoveType.Position:
+                Vector2 velocity = new Vector2(x * speed * Time.fixedDeltaTime, 0); // B: use Rigidbody2D.MovePosition -- not smooth
+                rb.MovePosition(rb.position + velocity); 
+                break;
+            case AgentMoveType.Thrust: // C: Add force
+                Vector2 thrust = new Vector2(movement, -grav);
+                rb.AddForce(thrust * Time.deltaTime * speed, ForceMode2D.Impulse);
+                rb.AddTorque(-x);
+                break;
+            case AgentMoveType.Torque: // D: Add rotation torque based on Horizontal axis input. See https://docs.unity3d.com/ScriptReference/Rigidbody2D.AddTorque.html.
+                rb.AddTorque(-movement);
+                break;
+        }
 
         if (debugMode && Input.GetButtonDown("Debug Reset")) {
             transform.position = init;
