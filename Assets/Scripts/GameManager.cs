@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour {
     private Vector3 mouseStart, mouseDelta;
     private PopulateAgentDisplay agentDisp;
 
+    public bool isPaused = false;
+    private AudioSource bgAudio;
+
     // Start is called before the first frame update
     void Start() {
         cam = Camera.main;
@@ -40,12 +43,14 @@ public class GameManager : MonoBehaviour {
 
         agentDisp = GameObject.Find("Agent Display").GetComponent<PopulateAgentDisplay>();
 
+        bgAudio = GameObject.Find("Background Music").GetComponent<AudioSource>();
+
         UpdateAgentCount();
     }
 
     // Update is called once per frame
     void Update() {
-        if (debugMode && Input.GetMouseButton(0)) {
+        if (debugMode && Input.GetMouseButton(0) && !isPaused) {
             /* If debug mode is enabled and left mouse button pressed, create new agents at mouse position: */
             delay -= 1;
             if (delay <= 0) {
@@ -59,6 +64,18 @@ public class GameManager : MonoBehaviour {
 
                 UpdateAgentCount();
             }
+        }
+
+        if (Input.GetButtonDown("Pause")) {
+            if (isPaused) {
+                ResumeGame();
+            } else {
+                PauseGame();
+            }
+
+            bgAudio.pitch *= -1;
+
+            isPaused = !isPaused;
         }
 
         /* Mouse Zoom and Camera Drag */
@@ -86,5 +103,13 @@ public class GameManager : MonoBehaviour {
         float minScale = 1f, maxScale = 12f;
         targetSize = Mathf.Clamp(targetSize, minScale, maxScale);
         cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, targetSize, zoomSpeed);
+    }
+
+    void PauseGame() {
+        Time.timeScale = 0f;
+    }
+
+    void ResumeGame() {
+        Time.timeScale = 1f;
     }
 }
