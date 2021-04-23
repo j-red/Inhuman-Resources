@@ -171,6 +171,7 @@ MonoBehaviour:
   grav: 0
   agentMoveType: 2
   debugMode: 0
+  deathPFX: {fileID: 3293669587947677433, guid: b7e955ed7bf0bae4ca07bcb29aae8031, type: 3}
 --- !u!1 &3964740742214419356
 GameObject:
   m_ObjectHideFlags: 0

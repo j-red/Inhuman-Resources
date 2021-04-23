@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
     private float zoomSpeed = 5f;
 
     private Vector3 mouseStart, mouseDelta;
+    private PopulateAgentDisplay agentDisp;
 
     // Start is called before the first frame update
     void Start() {
@@ -36,6 +37,8 @@ public class GameManager : MonoBehaviour {
 
         agentContainer = GameObject.Find("Agent Container");
         agentCounter = GameObject.Find("Agent Counter").GetComponent<Text>();
+
+        agentDisp = GameObject.Find("Agent Display").GetComponent<PopulateAgentDisplay>();
 
         UpdateAgentCount();
     }
@@ -72,7 +75,11 @@ public class GameManager : MonoBehaviour {
 
     public void UpdateAgentCount() {
         int maxCt = 100; // temp
-        agentCounter.text = "Agents: " + agentContainer.transform.childCount.ToString("D3") + "/" + maxCt.ToString(); // convert number of agents to string with leading zeroes
+        int numAgents = agentContainer.transform.childCount;
+        agentCounter.text = "Agents: " + numAgents.ToString("D3") + "/" + maxCt.ToString(); // convert number of agents to string with leading zeroes
+
+        // agentDisp.UpdateAgentColors(numAgents, maxCt - numAgents - 2, 1); // num active, inactive, dead
+        agentDisp.UpdateAgentColors(numAgents); // num active
     }
 
     void LateUpdate() {

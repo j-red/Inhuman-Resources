@@ -23,6 +23,8 @@ public class AgentController : MonoBehaviour {
     [SerializeField]
     private bool debugMode = false;
 
+    public GameObject deathPFX;
+
     // Start is called before the first frame update
     void Start() {
         init = transform.position;
@@ -77,6 +79,8 @@ public class AgentController : MonoBehaviour {
 
     IEnumerator Kill() {
         /* Coroutine code based on Unity manual, https://docs.unity3d.com/Manual/Coroutines.html. */
+
+        Instantiate(deathPFX, transform.position, Quaternion.identity);
 
         for (float i = 0; i < initDelay; i += Time.deltaTime) {
             /* This code simply waits initDelay seconds before triggering the shrink effect. */
