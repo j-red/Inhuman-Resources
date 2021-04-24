@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour {
     public bool isPaused = false;
     private AudioSource bgAudio;
 
+    // [SerializeField, Range(0, 1f)]
+    private float audioSwitchSpeed = 0.1f;
+
     // Start is called before the first frame update
     void Start() {
         cam = Camera.main;
@@ -68,14 +71,17 @@ public class GameManager : MonoBehaviour {
 
         if (Input.GetButtonDown("Pause")) {
             if (isPaused) {
-                ResumeGame();
+                ResumeGame();    
             } else {
                 PauseGame();
             }
-
-            bgAudio.pitch *= -1;
-
             isPaused = !isPaused;
+        }
+
+        if (isPaused) { // Smooth switch from playing in reverse to playing forward for background music when paused.
+            bgAudio.pitch = Mathf.SmoothStep(bgAudio.pitch, -1f, audioSwitchSpeed);
+        } else {
+            bgAudio.pitch = Mathf.SmoothStep(bgAudio.pitch, 1f, audioSwitchSpeed);
         }
 
         /* Mouse Zoom and Camera Drag */

@@ -24,6 +24,7 @@ public class AgentController : MonoBehaviour {
     private bool debugMode = false;
 
     public GameObject deathPFX;
+    private AudioSource deathSound;
 
     // Start is called before the first frame update
     void Start() {
@@ -31,6 +32,7 @@ public class AgentController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         weight = rb.mass;
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        deathSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -81,6 +83,8 @@ public class AgentController : MonoBehaviour {
         /* Coroutine code based on Unity manual, https://docs.unity3d.com/Manual/Coroutines.html. */
 
         Instantiate(deathPFX, transform.position, Quaternion.identity);
+        deathSound.pitch = Random.Range(0.5f, 1.2f);
+        deathSound.Play();
 
         for (float i = 0; i < initDelay; i += Time.deltaTime) {
             /* This code simply waits initDelay seconds before triggering the shrink effect. */
