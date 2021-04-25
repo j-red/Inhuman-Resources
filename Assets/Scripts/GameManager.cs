@@ -101,10 +101,10 @@ public class GameManager : MonoBehaviour {
         targetSize -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar;
         targetFOV -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar * 10f;
 
-        if (Input.GetButtonDown("Tertiary")) { /* When Middle Mouse is pressed: */
+        if (Input.GetButtonDown("Pan")) { /* When Middle Mouse is pressed: */
             mouseStart = Input.mousePosition;
             camPos = cam.transform.position;
-        } else if (Input.GetButton("Tertiary")) { // Middle mouse held down:
+        } else if (Input.GetButton("Pan")) { // Middle mouse held down:
             mouseDelta = Input.mousePosition - mouseStart;
             cam.transform.position = camPos - mouseDelta * dragScale;
         }
