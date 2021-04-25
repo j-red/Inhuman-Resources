@@ -98,17 +98,18 @@ public class GameManager : MonoBehaviour {
 
 
         /* Mouse Zoom and Camera Drag */
-        targetSize -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar;
-        targetFOV -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar * 10f;
+        if (!isPaused) {
+            targetSize -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar;
+            targetFOV -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar * 10f;
 
-        if (Input.GetButtonDown("Pan")) { /* When Middle Mouse is pressed: */
-            mouseStart = Input.mousePosition;
-            camPos = cam.transform.position;
-        } else if (Input.GetButton("Pan")) { // Middle mouse held down:
-            mouseDelta = Input.mousePosition - mouseStart;
-            cam.transform.position = camPos - mouseDelta * dragScale;
-        }
-        
+            if (Input.GetButtonDown("Pan")) { /* When Middle Mouse is pressed: */
+                mouseStart = Input.mousePosition;
+                camPos = cam.transform.position;
+            } else if (Input.GetButton("Pan")) { // Middle mouse held down:
+                mouseDelta = Input.mousePosition - mouseStart;
+                cam.transform.position = camPos - mouseDelta * dragScale;
+            }
+        }   
     }
 
     public void UpdateAgentCount() {
@@ -122,17 +123,17 @@ public class GameManager : MonoBehaviour {
     }
 
     void LateUpdate() {
-        // Perspective (3D) Zoom
-        float minFOV = 30f, maxFOV = 120f;
-        targetFOV = Mathf.Clamp(targetFOV, minFOV, maxFOV);
-        cam.fieldOfView = Mathf.SmoothStep(cam.fieldOfView, targetFOV, zoomSpeed);
+        if (!isPaused) {
+            // Perspective (3D) Zoom
+            float minFOV = 30f, maxFOV = 120f;
+            targetFOV = Mathf.Clamp(targetFOV, minFOV, maxFOV);
+            cam.fieldOfView = Mathf.SmoothStep(cam.fieldOfView, targetFOV, zoomSpeed);
 
-        // Orthographic (2D) Zoom
-        float minScale = 1f, maxScale = 12f;
-        targetSize = Mathf.Clamp(targetSize, minScale, maxScale);
-        cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, targetSize, zoomSpeed);
-
-
+            // Orthographic (2D) Zoom
+            float minScale = 1f, maxScale = 12f;
+            targetSize = Mathf.Clamp(targetSize, minScale, maxScale);
+            cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, targetSize, zoomSpeed);
+        }
     }
 
     void PauseGame() {
