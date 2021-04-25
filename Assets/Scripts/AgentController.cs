@@ -26,6 +26,9 @@ public class AgentController : MonoBehaviour {
     public GameObject deathPFX;
     private AudioSource deathSound;
 
+    private float triggerTimeout = 0.3f, triggerCall = 0f;
+
+
     // Start is called before the first frame update
     void Start() {
         init = transform.position;
@@ -60,6 +63,8 @@ public class AgentController : MonoBehaviour {
                 break;
         }
 
+        triggerCall = Mathf.Max(triggerCall - Time.deltaTime, 0f); // update time delay for trigger calls
+
         if (debugMode && Input.GetButtonDown("Debug Reset")) {
             transform.position = init;
             rb.velocity = Vector2.zero;
@@ -76,7 +81,11 @@ public class AgentController : MonoBehaviour {
             StartCoroutine("Kill");
         }
         
-        // Debug.Log(other.gameObject.name + " : " + gameObject.name + " : " + Time.time);
+        if (other.gameObject.tag == "Goal" && triggerCall == 0f) {
+            triggerCall = triggerTimeout;
+            StartCoroutine("Goal");
+            gm.numSaved += 1;
+        }
     }
 
     IEnumerator Kill() {
@@ -101,4 +110,24 @@ public class AgentController : MonoBehaviour {
         Destroy(this.gameObject); /* Destroy agent GameObject after initDelay + killDelay seconds */
     }
 
+    IEnumerator Goal() {
+        /* Coroutine code based on Unity manual, https://docs.unity3d.com/Manual/Coroutines.html. */
+        Instantiate(deathPFX, transform.position, Quaternion.identity);
+        // deathSound.pitch = Random.Range(0.5f, 1.2f);
+        // deathSound.Play();
+
+        for (float i = 0; i < initDelay; i += Time.deltaTime) {
+            /* This code simply waits initDelay seconds before triggering the shrink effect. */
+            yield return null;
+        }
+        
+        for (float i = 0; i <= killDelay; i += Time.deltaTime) {
+            transform.localScale = transform.localScale * .95f; // shrink agent by 5% each frame
+            yield return null;
+        }
+        transform.parent = null;
+        gm.UpdateAgentCount();
+
+        Destroy(this.gameObject); /* Destroy agent GameObject after initDelay + killDelay seconds */
+    }
 }

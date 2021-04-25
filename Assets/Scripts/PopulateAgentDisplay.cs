@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PopulateAgentDisplay : MonoBehaviour {
     public int numAgents = 100;
     public int width = 20, height = 5;
+    public int numSaved = 0;
 
     public float dx = 18f, dy = 36f;
     
@@ -13,11 +14,9 @@ public class PopulateAgentDisplay : MonoBehaviour {
     public Color active = new Color(1f, 1f, 1f);
     public Color inactive = new Color(0.4f, 0.4f, 0.4f);
     public Color dead = new Color(0.8f, 0.3f, 0.3f);
-
+    public Color saved = new Color(0.4f, 0.9f, 0.2f);
     public Vector2 startPos = Vector2.zero;
-
     public GameObject[] indicators;
-    
 
     // Start is called before the first frame update
     void Start() {
@@ -38,17 +37,22 @@ public class PopulateAgentDisplay : MonoBehaviour {
     }
 
     // public void UpdateAgentColors(int numActive, int numInactive, int numDead) {
-    public void UpdateAgentColors(int numActive) {
-        int i;
-        for (i = 0; i < numActive && i < indicators.Length; i ++) {
+    public void UpdateAgentColors(int numActive, int numSaved) {
+        int i = 0;
+        for (; i < numActive && i < indicators.Length; i ++) {
             indicators[i].GetComponent<Image>().color = active;
         }
         // for (; i < numActive + numInactive; i ++) {
         //     indicators[i].GetComponent<Image>().color = inactive;
         // }
+
         for (; i < indicators.Length; i ++) {
-            // indicators[i].GetComponent<Image>().color = dead;
             indicators[i].GetComponent<Image>().color = inactive;
+        }
+
+        for (i = 1; i < numSaved && i <= indicators.Length; i ++) {
+            indicators[indicators.Length - i].GetComponent<Image>().color = saved;
+            // print("Index" + (indicators.Length - i));
         }
     }
 

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class GameManager : MonoBehaviour {
     public bool debugMode = false;
@@ -13,26 +15,25 @@ public class GameManager : MonoBehaviour {
     public GameObject agent;
     private GameObject agentContainer;
     private Text agentCounter;
-
     private Camera cam;
     private Vector3 camPos;
-
-    private float targetSize;
+    private float targetSize, targetFOV;
     [SerializeField, Range(0, 10f)]
     private float zoomScalar = 3f;
     [SerializeField, Range(0, 0.5f)]
     private float dragScale = 0.02f;
     [SerializeField, Range(0, 10f)]
     private float zoomSpeed = 5f;
-
     private Vector3 mouseStart, mouseDelta;
     private PopulateAgentDisplay agentDisp;
-
     public bool isPaused = false;
     private AudioSource bgAudio;
-
-    // [SerializeField, Range(0, 1f)]
+    public GameObject pauseMenu;
+    private Volume postProcessor;
     private float audioSwitchSpeed = 0.1f;
+    private float initGrain;
+
+    public int numAgents = 0, numDead = 0, numSaved = 0, maxCt = 100;
 
     // Start is called before the first frame update
     void Start() {
@@ -43,10 +44,20 @@ public class GameManager : MonoBehaviour {
 
         agentContainer = GameObject.Find("Agent Container");
         agentCounter = GameObject.Find("Agent Counter").GetComponent<Text>();
-
         agentDisp = GameObject.Find("Agent Display").GetComponent<PopulateAgentDisplay>();
-
         bgAudio = GameObject.Find("Background Music").GetComponent<AudioSource>();
+        postProcessor = GameObject.Find("Post Processing Volume").GetComponent<Volume>();
+        // pauseMenu = GameObject.Find("Pause Menu");
+        // pauseMenu.SetActive(false);
+
+        // if (postProcessor.profile.TryGet<Bloom>(out var bloom)) {
+        //     // bloom.intensity.overrideState = true;
+        //     defaultBloom = bloom.intensity.value;
+        // }
+
+        if (postProcessor.profile.TryGet<FilmGrain>(out var grain)) {
+            initGrain = grain.intensity.value;
+        }
 
         UpdateAgentCount();
     }
@@ -76,16 +87,20 @@ public class GameManager : MonoBehaviour {
                 PauseGame();
             }
             isPaused = !isPaused;
+            pauseMenu.SetActive(isPaused);
         }
 
-        if (isPaused) { // Smooth switch from playing in reverse to playing forward for background music when paused.
+        if (isPaused) { // Smooth switch from playing in reverse to playing forward for background music when paused.   
             bgAudio.pitch = Mathf.SmoothStep(bgAudio.pitch, -1f, audioSwitchSpeed);
         } else {
             bgAudio.pitch = Mathf.SmoothStep(bgAudio.pitch, 1f, audioSwitchSpeed);
         }
 
+
         /* Mouse Zoom and Camera Drag */
         targetSize -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar;
+        targetFOV -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar * 10f;
+
         if (Input.GetButtonDown("Tertiary")) { /* When Middle Mouse is pressed: */
             mouseStart = Input.mousePosition;
             camPos = cam.transform.position;
@@ -97,25 +112,47 @@ public class GameManager : MonoBehaviour {
     }
 
     public void UpdateAgentCount() {
-        int maxCt = 100; // temp
-        int numAgents = agentContainer.transform.childCount;
-        agentCounter.text = "Agents: " + numAgents.ToString("D3") + "/" + maxCt.ToString(); // convert number of agents to string with leading zeroes
+        int maxCt = 36; // temp
+        string formatString = "D3";
+        numAgents = agentContainer.transform.childCount;
+        agentCounter.text = "Agents: " + numAgents.ToString(formatString) + "/" + maxCt.ToString(formatString); // convert number of agents to string with leading zeroes
 
         // agentDisp.UpdateAgentColors(numAgents, maxCt - numAgents - 2, 1); // num active, inactive, dead
-        agentDisp.UpdateAgentColors(numAgents); // num active
+        agentDisp.UpdateAgentColors(numAgents, numSaved); // num active
     }
 
     void LateUpdate() {
+        // Perspective (3D) Zoom
+        float minFOV = 30f, maxFOV = 120f;
+        targetFOV = Mathf.Clamp(targetFOV, minFOV, maxFOV);
+        cam.fieldOfView = Mathf.SmoothStep(cam.fieldOfView, targetFOV, zoomSpeed);
+
+        // Orthographic (2D) Zoom
         float minScale = 1f, maxScale = 12f;
         targetSize = Mathf.Clamp(targetSize, minScale, maxScale);
         cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, targetSize, zoomSpeed);
+
+
     }
 
     void PauseGame() {
         Time.timeScale = 0f;
+        float pauseGrain = 1f;
+        if (postProcessor.profile.TryGet<FilmGrain>(out var grain)) {
+            grain.intensity.value = pauseGrain;
+        }
+
     }
 
     void ResumeGame() {
         Time.timeScale = 1f;
+
+        if (postProcessor.profile.TryGet<FilmGrain>(out var grain)) {
+            grain.intensity.value = initGrain;
+        }
+    }
+
+    void Win() {
+        return;
     }
 }
