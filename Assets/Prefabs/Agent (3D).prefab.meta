@@ -1,9 +1,6 @@
 fileFormatVersion: 2
-guid: e581bff36afaf444a986ce754248df31
-labels:
-- Audio
-folderAsset: yes
-DefaultImporter:
+guid: 9ccd6cb85338bc44ab4715052080094f
+PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 

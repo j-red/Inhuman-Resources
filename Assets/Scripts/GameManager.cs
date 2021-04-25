@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour {
                 clone.transform.parent = agentContainer.transform;
                 delay = frameDelay;
 
-                UpdateAgentCount();
+                // UpdateAgentCount();
             }
         }
 

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AgentController : MonoBehaviour {
-    private Rigidbody2D rb;
+    // private Rigidbody2D rb;
+    public Rigidbody rb;
 
     [Range(1f, 10f)]
     public float speed = 5f;
@@ -32,10 +33,12 @@ public class AgentController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         init = transform.position;
-        rb = GetComponent<Rigidbody2D>();
+        // rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         weight = rb.mass;
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         deathSound = GetComponent<AudioSource>();
+        gm.UpdateAgentCount();
     }
 
     // Update is called once per frame
@@ -45,21 +48,27 @@ public class AgentController : MonoBehaviour {
 
         float movement = x * speed;
         
-        switch (agentMoveType) {
+        switch (agentMoveType) { // RB2D alternatives commented out
             case AgentMoveType.Velocity:
-                rb.velocity = new Vector2(movement, rb.velocity.y - grav); // A: update velocity directly -- works well for horizontal movement, but not for airborne/vertical
+                // rb.velocity = new Vector2(movement, rb.velocity.y - grav); // A: update velocity directly -- works well for horizontal movement, but not for airborne/vertical
+                rb.velocity = new Vector3(movement, rb.velocity.y - grav, 0);
                 break;
             case AgentMoveType.Position:
-                Vector2 velocity = new Vector2(x * speed * Time.fixedDeltaTime, 0); // B: use Rigidbody2D.MovePosition -- not smooth
+                // Vector2 velocity = new Vector2(x * speed * Time.fixedDeltaTime, 0); // B: use Rigidbody2D.MovePosition -- not smooth
+                Vector3 velocity = new Vector3(x * speed * Time.fixedDeltaTime, 0, 0);
                 rb.MovePosition(rb.position + velocity); 
                 break;
             case AgentMoveType.Thrust: // C: Add force
-                Vector2 thrust = new Vector2(movement, -grav);
-                rb.AddForce(thrust * Time.deltaTime * speed, ForceMode2D.Impulse);
-                rb.AddTorque(-x);
+                // Vector2 thrust = new Vector2(movement, -grav);
+                // rb.AddForce(thrust * Time.deltaTime * speed, ForceMode2D.Impulse);
+                Vector3 thrust = new Vector3(movement, -grav, 0);
+                rb.AddForce(thrust * Time.deltaTime * speed, ForceMode.Impulse);
+                // rb.AddTorque(-x);
+                rb.AddTorque(new Vector3(-x, 0, 0));
                 break;
             case AgentMoveType.Torque: // D: Add rotation torque based on Horizontal axis input. See https://docs.unity3d.com/ScriptReference/Rigidbody2D.AddTorque.html.
-                rb.AddTorque(-movement);
+                // rb.AddTorque(-movement);
+                rb.AddTorque(new Vector3(-movement, 0, 0));
                 break;
         }
 
@@ -75,7 +84,20 @@ public class AgentController : MonoBehaviour {
         /* Physics loop -- runs 50x per second. */
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    // private void OnTriggerEnter2D(Collider2D other) {
+    //     /* Destroy Agent if they come into contact with a 'Kill Zone' */
+    //     if (other.gameObject.tag == "Kill") {
+    //         StartCoroutine("Kill");
+    //     }
+    //  
+    //     if (other.gameObject.tag == "Goal" && triggerCall == 0f) {
+    //         triggerCall = triggerTimeout;
+    //         StartCoroutine("Goal");
+    //         gm.numSaved += 1;
+    //     }
+    // }
+
+    private void OnTriggerEnter(Collider other) {
         /* Destroy Agent if they come into contact with a 'Kill Zone' */
         if (other.gameObject.tag == "Kill") {
             StartCoroutine("Kill");
