@@ -4,39 +4,51 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+    [HeaderAttribute ("Debug")] 
     public bool debugMode = false;
     [Range(1, 120)]
     public int frameDelay = 15; // num frames to wait between each instance of new agent
     private int delay = 0;
     [SerializeField, Range(0, 1f)]
     private float randomOffset = 0.1f;
-    public GameObject agent;
     private GameObject agentContainer;
     private Text agentCounter;
     private Camera cam;
     private Vector3 camPos;
     private float targetSize, targetFOV;
+    public bool isPaused = false;
+    public GameObject pauseMenu;
+    private Vector3 mouseStart, mouseDelta;
+    private PopulateAgentDisplay agentDisp;
+    private AudioSource bgAudio;
+    private bool hasWon = false;
+
+    [HeaderAttribute ("Camera Controls")] 
     [SerializeField, Range(0, 10f)]
     private float zoomScalar = 3f;
     [SerializeField, Range(0, 0.5f)]
     private float dragScale = 0.02f;
     [SerializeField, Range(0, 10f)]
-    private float zoomSpeed = 5f;
-    private Vector3 mouseStart, mouseDelta;
-    private PopulateAgentDisplay agentDisp;
-    public bool isPaused = false;
-    private AudioSource bgAudio;
-    public GameObject pauseMenu;
+    private float zoomSpeed = 5f;    
     private Volume postProcessor;
     private float audioSwitchSpeed = 0.1f;
     private float initGrain;
 
-    public int numAgents = 0, numDead = 0, numSaved = 0, maxCt = 100;
+    [HeaderAttribute ("Camera Bounds")] 
+    public Vector2 lowerLeft = new Vector2(-5, -5);
+    public Vector2 upperRight = new Vector2(5, 5);
+    [SerializeField]
+    private Vector2 currentCamPos; // useful in debugging/assigning values
 
-    // Start is called before the first frame update
-    void Start() {
+    [HeaderAttribute ("Agents")] 
+    public GameObject agent;
+    public int numAgents = 0, numDead = 0, numSaved = 0, maxCt = 100, numToWin = 10;
+
+    // Start is called before the first frame update, Awake is called even earlier.
+    void Awake() {
         cam = Camera.main;
         camPos = cam.transform.position;
 
@@ -96,7 +108,23 @@ public class GameManager : MonoBehaviour {
             bgAudio.pitch = Mathf.SmoothStep(bgAudio.pitch, 1f, audioSwitchSpeed);
         }
 
+        if (numSaved >= numToWin && !hasWon) {
+            Win();
+        }
+    }
 
+    public void UpdateAgentCount() {
+        int maxCt = 36; // temp
+        string formatString = "D3";
+        if (!agentContainer) agentContainer = GameObject.Find("Agent Container");
+        numAgents = agentContainer.transform.childCount;
+        agentCounter.text = "Agents: " + numAgents.ToString(formatString) + "/" + maxCt.ToString(formatString); // convert number of agents to string with leading zeroes
+
+        // agentDisp.UpdateAgentColors(numAgents, maxCt - numAgents - 2, 1); // num active, inactive, dead
+        agentDisp.UpdateAgentColors(numAgents, numSaved); // num active
+    }
+
+    void LateUpdate() {
         /* Mouse Zoom and Camera Drag */
         if (!isPaused) {
             targetSize -= Input.GetAxis("Mouse ScrollWheel") * zoomScalar;
@@ -109,21 +137,11 @@ public class GameManager : MonoBehaviour {
                 mouseDelta = Input.mousePosition - mouseStart;
                 cam.transform.position = camPos - mouseDelta * dragScale;
             }
-        }   
-    }
 
-    public void UpdateAgentCount() {
-        int maxCt = 36; // temp
-        string formatString = "D3";
-        numAgents = agentContainer.transform.childCount;
-        agentCounter.text = "Agents: " + numAgents.ToString(formatString) + "/" + maxCt.ToString(formatString); // convert number of agents to string with leading zeroes
+            // Clamp camera position to bounds indicated by LowerLeft and UpperRight.
+            cam.transform.position = new Vector3(Mathf.Clamp(cam.transform.position.x, lowerLeft.x, upperRight.x), Mathf.Clamp(cam.transform.position.y, lowerLeft.y, upperRight.y), cam.transform.position.z);
+            currentCamPos = new Vector2(cam.transform.position.x, cam.transform.position.y);
 
-        // agentDisp.UpdateAgentColors(numAgents, maxCt - numAgents - 2, 1); // num active, inactive, dead
-        agentDisp.UpdateAgentColors(numAgents, numSaved); // num active
-    }
-
-    void LateUpdate() {
-        if (!isPaused) {
             // Perspective (3D) Zoom
             float minFOV = 30f, maxFOV = 120f;
             targetFOV = Mathf.Clamp(targetFOV, minFOV, maxFOV);
@@ -153,7 +171,14 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void Win() {
+    public void Win() {
+        print("You won!");
+        hasWon = true;
         return;
+    }
+
+    public void ResetActiveScene() { // From https://forum.unity.com/threads/how-to-fully-reset-a-scene-upon-restart.452463/
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ResumeGame();
     }
 }

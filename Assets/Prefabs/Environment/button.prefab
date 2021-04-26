@@ -175,16 +175,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9999779d4155c1c4fa5528ade25985eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
   numToActivate: 1
   currentCount: 0
-  animCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  dampTime: 0.3
-  deltaTime: 0.05
+  dampTime: 0.1
+  dy: -0.04
+  weight: 0
+  animTarget: {fileID: 0}
+  targetName: Activated
 --- !u!1 &6344904953379106727
 GameObject:
   m_ObjectHideFlags: 0

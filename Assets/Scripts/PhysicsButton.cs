@@ -14,9 +14,7 @@ public class PhysicsButton : MonoBehaviour {
 
     private Collider col;
     private Animator anim;
-
-    [SerializeField]
-    private float dampTime = 0.3f;
+    private float dampTime = 0.1f;
     [SerializeField]
     private float dy = -0.04f;
     private Vector3 startPos, activePos;
@@ -24,6 +22,7 @@ public class PhysicsButton : MonoBehaviour {
     [SerializeField]
     private float weight = 0f;
 
+    [HeaderAttribute ("Animator Target"), Tooltip("Target inspector and boolean parameter name to activate when button is fully pressed.")] 
     public Animator animTarget;
     public string targetName = "Activated"; /* Boolean parameter value on animTarget animator to set to true/false */
 

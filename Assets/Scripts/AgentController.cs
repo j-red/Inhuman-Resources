@@ -99,8 +99,10 @@ public class AgentController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         /* Destroy Agent if they come into contact with a 'Kill Zone' */
-        if (other.gameObject.tag == "Kill") {
+        if (other.gameObject.tag == "Kill" && triggerCall == 0f) {
             StartCoroutine("Kill");
+            triggerCall = triggerTimeout;
+            gm.numDead += 1;
         }
         
         if (other.gameObject.tag == "Goal" && triggerCall == 0f) {

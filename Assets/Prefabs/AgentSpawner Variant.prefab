@@ -52,12 +52,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5086021704964715810, guid: dc73028e81554b34f9aa02cf576b391c, type: 3}
+      propertyPath: dx
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086021704964715810, guid: dc73028e81554b34f9aa02cf576b391c, type: 3}
+      propertyPath: dy
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086021704964715810, guid: dc73028e81554b34f9aa02cf576b391c, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 967829600724003581, guid: 58e93ecb0df5b4845a171cdb65f7f7cd, type: 3}
+      objectReference: {fileID: 8650656696700991081, guid: 9ccd6cb85338bc44ab4715052080094f, type: 3}
     - target: {fileID: 6121531275985159829, guid: dc73028e81554b34f9aa02cf576b391c, type: 3}
       propertyPath: m_Name
-      value: AgentSpawner
+      value: AgentSpawner Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc73028e81554b34f9aa02cf576b391c, type: 3}

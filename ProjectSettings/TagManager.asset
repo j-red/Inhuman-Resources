@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Kill
   - Goal
+  - Moving Platform
   layers:
   - Default
   - TransparentFX
