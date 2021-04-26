@@ -18,15 +18,18 @@ public class GameManager : MonoBehaviour {
     private Text agentCounter;
     private Camera cam;
     private Vector3 camPos;
-    private float targetSize, targetFOV;
     public bool isPaused = false;
     public GameObject pauseMenu;
     private Vector3 mouseStart, mouseDelta;
     private PopulateAgentDisplay agentDisp;
     private AudioSource bgAudio;
     private bool hasWon = false;
+    public GameObject confetti;
 
     [HeaderAttribute ("Camera Controls")] 
+    // [Range(30f, 120f)]
+    // public float targetFOV = 40f;
+    private float targetSize, targetFOV;
     [SerializeField, Range(0, 10f)]
     private float zoomScalar = 3f;
     [SerializeField, Range(0, 0.5f)]
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         cam = Camera.main;
         camPos = cam.transform.position;
-
+        targetFOV = cam.fieldOfView;
         targetSize = cam.orthographicSize;
 
         agentContainer = GameObject.Find("Agent Container");
@@ -174,11 +177,14 @@ public class GameManager : MonoBehaviour {
     public void Win() {
         print("You won!");
         hasWon = true;
+
+        Instantiate(confetti, GameObject.Find("Goal Zone").transform.position, Quaternion.identity);
         return;
     }
 
     public void ResetActiveScene() { // From https://forum.unity.com/threads/how-to-fully-reset-a-scene-upon-restart.452463/
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         ResumeGame();
     }
 }

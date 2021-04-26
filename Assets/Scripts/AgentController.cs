@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class AgentController : MonoBehaviour {
     // private Rigidbody2D rb;
-    public Rigidbody rb;
-
-    [Range(1f, 10f)]
+    private Rigidbody rb;
+    [HeaderAttribute ("Movement"), Range(1f, 10f)]
     public float speed = 5f;
     private float weight;
     private Vector3 init;
@@ -16,7 +15,7 @@ public class AgentController : MonoBehaviour {
     private float initDelay = 0.1f;
     private GameManager gm; // Game Manager
 
-    public float grav = 0f;
+    private float grav = 0f;
 
     public enum AgentMoveType { Velocity, Position, Thrust, Torque };
     public AgentMoveType agentMoveType;
@@ -24,11 +23,12 @@ public class AgentController : MonoBehaviour {
     [SerializeField]
     private bool debugMode = false;
 
+    [HeaderAttribute ("Sound Effects")] 
     public GameObject deathPFX;
-    private AudioSource deathSound;
+    private AudioSource audioSrc;
+    public AudioClip deathSound, bumpSound;
 
     private float triggerTimeout = 0.3f, triggerCall = 0f;
-
 
     // Start is called before the first frame update
     void Start() {
@@ -37,7 +37,7 @@ public class AgentController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         weight = rb.mass;
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        deathSound = GetComponent<AudioSource>();
+        audioSrc = GetComponent<AudioSource>();
         gm.UpdateAgentCount();
     }
 
@@ -112,12 +112,19 @@ public class AgentController : MonoBehaviour {
         }
     }
 
+    private void OnCollisionEnter(Collision other) {
+        audioSrc.clip = bumpSound;
+        audioSrc.pitch = Random.Range(0.8f, 2f);
+        audioSrc.Play();
+    }
+
     IEnumerator Kill() {
         /* Coroutine code based on Unity manual, https://docs.unity3d.com/Manual/Coroutines.html. */
 
         Instantiate(deathPFX, transform.position, Quaternion.identity);
-        deathSound.pitch = Random.Range(0.5f, 1.2f);
-        deathSound.Play();
+        audioSrc.pitch = Random.Range(0.5f, 1.2f);
+        audioSrc.clip = deathSound;
+        audioSrc.Play();
 
         for (float i = 0; i < initDelay; i += Time.deltaTime) {
             /* This code simply waits initDelay seconds before triggering the shrink effect. */

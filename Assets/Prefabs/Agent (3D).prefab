@@ -269,13 +269,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c73a16ab5504674696dedb1753990cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   speed: 6
   killDelay: 0.1
   grav: 0
   agentMoveType: 2
   debugMode: 0
   deathPFX: {fileID: 3293669587947677433, guid: b7e955ed7bf0bae4ca07bcb29aae8031, type: 3}
+  deathSound: {fileID: 8300000, guid: 9a17ae3e83f16824eaa78ab18e29b49d, type: 3}
+  bumpSound: {fileID: 8300000, guid: 0f44aefbfe9f55d45817a567cbf1329f, type: 3}
 --- !u!1 &8650656697840943051
 GameObject:
   m_ObjectHideFlags: 0
