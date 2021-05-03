@@ -114,8 +114,18 @@ public class AgentController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other) {
         audioSrc.clip = bumpSound;
+        audioSrc.priority = 200;
         audioSrc.pitch = Random.Range(0.8f, 2f);
         audioSrc.Play();
+    }
+
+    private void OnTriggerExit(Collider other) {
+        /* Kill agent if they leave the playable zone */
+        // if (other.gmeObject.tag == "Play Area") { // WIP
+        //     StartCoroutine("Kill");
+        //     triggerCall = triggerTimeout;
+        //     gm.numDead += 1;
+        // }
     }
 
     IEnumerator Kill() {
@@ -124,6 +134,8 @@ public class AgentController : MonoBehaviour {
         Instantiate(deathPFX, transform.position, Quaternion.identity);
         audioSrc.pitch = Random.Range(0.5f, 1.2f);
         audioSrc.clip = deathSound;
+        audioSrc.priority = 100;
+        audioSrc.volume = 0.3f;
         audioSrc.Play();
 
         for (float i = 0; i < initDelay; i += Time.deltaTime) {

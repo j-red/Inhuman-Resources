@@ -128,7 +128,7 @@ AudioSource:
   m_GameObject: {fileID: 8650656696700991081}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 5cba5c9fc74f8674ab994cfb6608b6a2, type: 2}
+  OutputAudioMixerGroup: {fileID: -9139108889829558919, guid: 5cba5c9fc74f8674ab994cfb6608b6a2, type: 2}
   m_audioClip: {fileID: 8300000, guid: c77ea58058ae7c043b8d13e1a960ecec, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
@@ -137,7 +137,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 120
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -271,11 +271,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   killDelay: 0.1
-  grav: 0
   agentMoveType: 2
   debugMode: 0
   deathPFX: {fileID: 3293669587947677433, guid: b7e955ed7bf0bae4ca07bcb29aae8031, type: 3}
-  deathSound: {fileID: 8300000, guid: 9a17ae3e83f16824eaa78ab18e29b49d, type: 3}
+  deathSound: {fileID: 8300000, guid: c77ea58058ae7c043b8d13e1a960ecec, type: 3}
   bumpSound: {fileID: 8300000, guid: 0f44aefbfe9f55d45817a567cbf1329f, type: 3}
 --- !u!1 &8650656697840943051
 GameObject:

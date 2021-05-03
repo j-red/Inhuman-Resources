@@ -22,9 +22,13 @@ public class PhysicsButton : MonoBehaviour {
     [SerializeField]
     private float weight = 0f;
 
-    [HeaderAttribute ("Animator Target"), Tooltip("Target inspector and boolean parameter name to activate when button is fully pressed.")] 
+    [HeaderAttribute ("Activation Fields"), Tooltip("Target inspector and boolean parameter name to activate when button is fully pressed.")] 
     public Animator animTarget;
     public string targetName = "Activated"; /* Boolean parameter value on animTarget animator to set to true/false */
+
+    public IndicatorLight light;
+    public AudioClip clickOn, clickOff;
+    private AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start() {
@@ -33,6 +37,7 @@ public class PhysicsButton : MonoBehaviour {
         startPos = top.transform.position;
         activePos = startPos + new Vector3(0, dy, 0);
         // anim = GetComponent<Animator>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,10 +45,22 @@ public class PhysicsButton : MonoBehaviour {
         weight = Mathf.SmoothStep(weight, currentCount / (float)numToActivate, dampTime);
         top.transform.position = Vector3.Slerp(startPos, activePos, weight);
         // anim.SetFloat("Weight", weight, dampTime, deltaTime);
-        
+
+        if (weight >= 1f && !isActive) {
+            /* If the button will become activated this frame: */
+            PlaySound(clickOn);
+        } else if (weight < 1f && isActive) {
+            /* If button is deactivating this frame: */
+            PlaySound(clickOff);
+        }
+
         isActive = weight >= 1f; // set isActive to true when the weight exceeds the required amount
 
         animTarget.SetBool(targetName, isActive);
+        
+        if (light != null) {
+            light.active = isActive;
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -56,5 +73,10 @@ public class PhysicsButton : MonoBehaviour {
         if (other.gameObject.tag == "Player") {
             currentCount -= 1;
         }
+    }
+
+    public void PlaySound(AudioClip clip) {
+        audioSrc.clip = clip;
+        audioSrc.Play();
     }
 }

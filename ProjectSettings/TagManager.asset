@@ -7,6 +7,7 @@ TagManager:
   - Kill
   - Goal
   - Moving Platform
+  - Play Area
   layers:
   - Default
   - TransparentFX

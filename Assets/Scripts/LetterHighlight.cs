@@ -49,7 +49,7 @@ public class LetterHighlight : MonoBehaviour {
         float v = minCol;
         if (gm.numAgents == 0) {
             v = Mathf.SmoothStep(minCol, 1f, timer);
-            timer += Time.deltaTime / 2f;
+            timer += Time.deltaTime / 1f;
         }
         Color col = new Color(v, v, v);
         esc.GetComponent<Image>().color = col; 
