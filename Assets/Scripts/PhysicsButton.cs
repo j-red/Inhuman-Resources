@@ -26,7 +26,7 @@ public class PhysicsButton : MonoBehaviour {
     public Animator animTarget;
     public string targetName = "Activated"; /* Boolean parameter value on animTarget animator to set to true/false */
 
-    public IndicatorLight light;
+    public IndicatorLight myLight;
     public AudioClip clickOn, clickOff;
     private AudioSource audioSrc;
 
@@ -58,8 +58,8 @@ public class PhysicsButton : MonoBehaviour {
 
         animTarget.SetBool(targetName, isActive);
         
-        if (light != null) {
-            light.active = isActive;
+        if (myLight != null) {
+            myLight.active = isActive;
         }
     }
 

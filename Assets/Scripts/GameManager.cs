@@ -84,8 +84,8 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (debugMode && Input.GetMouseButton(0) && !isPaused) {
-            /* If debug mode is enabled and left mouse button pressed, create new agents at mouse position: */
+        if (debugMode && Input.GetMouseButton(1) && !isPaused) {
+            /* If debug mode is enabled and right mouse button pressed, create new agents at mouse position: */
             delay -= 1;
             if (delay <= 0) {
                 Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -121,17 +121,18 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void TriggerDialogue()
-    {
+    public void TriggerDialogue() {
         FindObjectOfType<DialogueManager>().StartDialogue(sdialogue);
     }
 
     public void UpdateAgentCount() {
-        int maxCt = 36; // temp
+        // int maxCt = 36; // temp
         string formatString = "D3";
         if (!agentContainer) agentContainer = GameObject.Find("Agent Container");
         numAgents = agentContainer.transform.childCount;
-        agentCounter.text = "Agents: " + numAgents.ToString(formatString) + "/" + maxCt.ToString(formatString); // convert number of agents to string with leading zeroes
+        // agentCounter.text = "Agents: " + numAgents.ToString(formatString) + "/" + maxCt.ToString(formatString); // convert number of agents to string with leading zeroes
+
+        agentCounter.text = "Agents: " + numSaved.ToString(formatString) + "/" + numToWin.ToString(formatString); // convert number of agents to string with leading zeroes
 
         // agentDisp.UpdateAgentColors(numAgents, maxCt - numAgents - 2, 1); // num active, inactive, dead
         agentDisp.UpdateAgentColors(numAgents, numSaved); // num active
