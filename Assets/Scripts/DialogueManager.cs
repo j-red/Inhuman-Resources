@@ -10,9 +10,6 @@ public class DialogueManager : MonoBehaviour
 
     public bool dialogueActive;
 
-    //public string[] dialogueLines;
-    //public int currentLine;
-
     public Queue<string> sentences;
 
 
