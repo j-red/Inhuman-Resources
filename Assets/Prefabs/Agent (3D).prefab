@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8458645801293601944}
   - component: {fileID: 8458645801293601947}
   - component: {fileID: 8650656696700991082}
+  - component: {fileID: 8220556945532397069}
   m_Layer: 0
   m_Name: Agent (3D)
   m_TagString: Player
@@ -111,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8650656696700991081}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.07, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8650656697840943044}
@@ -276,6 +277,29 @@ MonoBehaviour:
   deathPFX: {fileID: 3293669587947677433, guid: b7e955ed7bf0bae4ca07bcb29aae8031, type: 3}
   deathSound: {fileID: 8300000, guid: c77ea58058ae7c043b8d13e1a960ecec, type: 3}
   bumpSound: {fileID: 8300000, guid: 0f44aefbfe9f55d45817a567cbf1329f, type: 3}
+--- !u!164 &8220556945532397069
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650656696700991081}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -100
+  m_DecayTime: 1.49
+  m_DecayHFRatio: 0.83
+  m_ReflectionsLevel: -2602
+  m_ReverbLevel: 200
+  m_ReverbDelay: 0.011
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 1
 --- !u!1 &8650656697840943051
 GameObject:
   m_ObjectHideFlags: 0
