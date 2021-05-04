@@ -50,6 +50,13 @@ public class GameManager : MonoBehaviour {
     public GameObject agent;
     public int numAgents = 0, numDead = 0, numSaved = 0, maxCt = 100, numToWin = 10;
 
+    [HeaderAttribute("Dialogue")] // factor into level-specific scripts
+    public Dialogue sdialogue;
+
+    //private DialogueManager dialogueManager;
+    //public string[] startDialogueLines;
+    // public string resetDialogue; // add different dialogue on reset
+
     // Start is called before the first frame update, Awake is called even earlier.
     void Awake() {
         cam = Camera.main;
@@ -62,19 +69,17 @@ public class GameManager : MonoBehaviour {
         agentDisp = GameObject.Find("Agent Display").GetComponent<PopulateAgentDisplay>();
         bgAudio = GameObject.Find("Background Music").GetComponent<AudioSource>();
         postProcessor = GameObject.Find("Post Processing Volume").GetComponent<Volume>();
-        // pauseMenu = GameObject.Find("Pause Menu");
-        // pauseMenu.SetActive(false);
-
-        // if (postProcessor.profile.TryGet<Bloom>(out var bloom)) {
-        //     // bloom.intensity.overrideState = true;
-        //     defaultBloom = bloom.intensity.value;
-        // }
 
         if (postProcessor.profile.TryGet<FilmGrain>(out var grain)) {
             initGrain = grain.intensity.value;
         }
 
         UpdateAgentCount();
+    }
+
+    void Start()
+    {
+        TriggerDialogue();
     }
 
     // Update is called once per frame
@@ -114,6 +119,11 @@ public class GameManager : MonoBehaviour {
         if (numSaved >= numToWin && !hasWon) {
             Win();
         }
+    }
+
+    public void TriggerDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(sdialogue);
     }
 
     public void UpdateAgentCount() {
