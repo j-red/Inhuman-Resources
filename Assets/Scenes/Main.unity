@@ -2584,6 +2584,7 @@ MonoBehaviour:
       enjoyable <color=red>job</color>!"
     - "Look, your fellow human \nworkers aren't going to \ntheir next job. They need
       \n<color=orange>instructions</color>."
+    - "Get them to the \n<color=#56D34A>goal zone</color> and await \nfurther instruction."
     - "Move quickly.           \nYou <color=red>don't</color> want \nto disappoint
       me."
 --- !u!4 &456183503
