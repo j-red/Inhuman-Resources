@@ -178,10 +178,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  numToActivate: 1
-  currentCount: 0
   dy: -0.04
   weight: 0
+  currentWeight: 0
+  weightToActivate: 1
   animTarget: {fileID: 0}
   targetName: Activated
   myLight: {fileID: 0}
@@ -317,7 +317,6 @@ GameObject:
   - component: {fileID: 769223683694758984}
   - component: {fileID: 9153558653452357768}
   - component: {fileID: 2936890437589623345}
-  - component: {fileID: 6580557153279192860}
   - component: {fileID: 6580557153279192861}
   m_Layer: 0
   m_Name: Top
@@ -389,22 +388,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6580557153279192860
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6344904953379106727}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &6580557153279192861
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -6,11 +6,11 @@ public class PhysicsButton : MonoBehaviour {
     public bool isActive = false;
     
     [HeaderAttribute ("Setup")] 
-    public int numToActivate = 1;
+    // public int numToActivate = 1;
     private GameObject top;
     
-    [SerializeField]
-    private int currentCount = 0;
+    // [SerializeField]
+    // private int currentCount = 0;
 
     private Collider col;
     private Animator anim;
@@ -18,9 +18,7 @@ public class PhysicsButton : MonoBehaviour {
     [SerializeField]
     private float dy = -0.04f;
     private Vector3 startPos, activePos;
-    
-    [SerializeField]
-    private float weight = 0f;
+    public float weight = 0f, currentWeight = 0f, weightToActivate = 1f;
 
     [HeaderAttribute ("Activation Fields"), Tooltip("Target inspector and boolean parameter name to activate when button is fully pressed.")] 
     public Animator animTarget;
@@ -42,19 +40,21 @@ public class PhysicsButton : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        weight = Mathf.SmoothStep(weight, currentCount / (float)numToActivate, dampTime);
+        // weight = Mathf.SmoothStep(weight, currentCount / (float)numToActivate, dampTime);
+        weight = Mathf.SmoothStep(weight, currentWeight / weightToActivate, dampTime);
+
         top.transform.position = Vector3.Slerp(startPos, activePos, weight);
         // anim.SetFloat("Weight", weight, dampTime, deltaTime);
 
-        if (weight >= 1f && !isActive) {
+        if (currentWeight >= weightToActivate && !isActive) {
             /* If the button will become activated this frame: */
             PlaySound(clickOn);
-        } else if (weight < 1f && isActive) {
+        } else if (currentWeight < weightToActivate && isActive) {
             /* If button is deactivating this frame: */
             PlaySound(clickOff);
         }
 
-        isActive = weight >= 1f; // set isActive to true when the weight exceeds the required amount
+        isActive = weight >= weightToActivate; // set isActive to true when the weight exceeds the required amount
 
         animTarget.SetBool(targetName, isActive);
         
@@ -64,14 +64,24 @@ public class PhysicsButton : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Player") {
-            currentCount += 1;
+        // if (other.gameObject.tag == "Player") {
+        //     currentCount += 1;
+        // }
+        Rigidbody otherRb = other.gameObject.GetComponent<Rigidbody>();
+        if (otherRb != null) {
+            currentWeight += otherRb.mass;
         }
+
+        // print(other.gameObject.name); // for debug
     }
 
     private void OnTriggerExit(Collider other) {
-        if (other.gameObject.tag == "Player") {
-            currentCount -= 1;
+        // if (other.gameObject.tag == "Player") {
+        //     currentCount -= 1;
+        // }
+        Rigidbody otherRb = other.gameObject.GetComponent<Rigidbody>();
+        if (otherRb != null) {
+            currentWeight -= otherRb.mass;
         }
     }
 
