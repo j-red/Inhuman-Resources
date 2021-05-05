@@ -229,6 +229,9 @@ MonoBehaviour:
   dialogueActive: 0
   delayTime: 0.025
   pitchModulation: 0.2
+  sdialogue:
+    sentences:
+    - 
 --- !u!82 &5130696554814865592
 AudioSource:
   m_ObjectHideFlags: 0

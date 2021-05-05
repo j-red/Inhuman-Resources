@@ -23,8 +23,10 @@ public class GameManager : MonoBehaviour {
     private Vector3 mouseStart, mouseDelta;
     private PopulateAgentDisplay agentDisp;
     private AudioSource bgAudio;
-    private bool hasWon = false;
+    public bool hasWon = false, hasLost = false;
     public GameObject confetti;
+
+    private float pausedPitch = -1f; // pitch speed to lerp to when paused
 
     [HeaderAttribute ("Camera Controls")] 
     // [Range(30f, 120f)]
@@ -50,12 +52,8 @@ public class GameManager : MonoBehaviour {
     public GameObject agent;
     public int numAgents = 0, numDead = 0, numSaved = 0, maxCt = 100, numToWin = 10;
 
-    [HeaderAttribute("Dialogue")] // factor into level-specific scripts
-    public Dialogue sdialogue;
-
-    //private DialogueManager dialogueManager;
-    //public string[] startDialogueLines;
-    // public string resetDialogue; // add different dialogue on reset
+    // [HeaderAttribute ("Dialogs")] 
+    private DialogueTrigger dialogTrigger;
 
     // Start is called before the first frame update, Awake is called even earlier.
     void Awake() {
@@ -77,9 +75,9 @@ public class GameManager : MonoBehaviour {
         UpdateAgentCount();
     }
 
-    void Start()
-    {
-        TriggerDialogue();
+    private void Start() {
+        dialogTrigger = GetComponent<DialogueTrigger>();
+        dialogTrigger.Intro();
     }
 
     // Update is called once per frame
@@ -108,10 +106,11 @@ public class GameManager : MonoBehaviour {
             }
             isPaused = !isPaused;
             pauseMenu.SetActive(isPaused);
+            pauseMenu.transform.SetAsLastSibling();
         }
 
         if (isPaused) { // Smooth switch from playing in reverse to playing forward for background music when paused.   
-            bgAudio.pitch = Mathf.SmoothStep(bgAudio.pitch, -1f, audioSwitchSpeed);
+            bgAudio.pitch = Mathf.SmoothStep(bgAudio.pitch, pausedPitch, audioSwitchSpeed);
         } else {
             bgAudio.pitch = Mathf.SmoothStep(bgAudio.pitch, 1f, audioSwitchSpeed);
         }
@@ -119,11 +118,15 @@ public class GameManager : MonoBehaviour {
         if (numSaved >= numToWin && !hasWon) {
             Win();
         }
+
+        if (numAgents == 0 && !hasWon && !hasLost) {
+            Lose();
+        }
     }
 
-    public void TriggerDialogue() {
-        FindObjectOfType<DialogueManager>().StartDialogue(sdialogue);
-    }
+    // public void TriggerDialogue() {
+    //     FindObjectOfType<DialogueManager>().StartDialogue(sdialogue);
+    // }
 
     public void UpdateAgentCount() {
         // int maxCt = 36; // temp
@@ -189,8 +192,15 @@ public class GameManager : MonoBehaviour {
         print("You won!");
         hasWon = true;
 
+        dialogTrigger.Win();
+
         Instantiate(confetti, GameObject.Find("Goal Zone").transform.position, Quaternion.identity);
         return;
+    }
+
+    public void Lose() {
+        hasLost = true;
+        dialogTrigger.Lose();
     }
 
     public void ResetActiveScene() { // From https://forum.unity.com/threads/how-to-fully-reset-a-scene-upon-restart.452463/

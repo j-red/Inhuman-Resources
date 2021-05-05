@@ -17,11 +17,18 @@ public class DialogueManager : MonoBehaviour {
     [Range(0, 1f), Tooltip("Noise factor for pitch modulation.")]
     public float pitchModulation = 0.1f;
 
+    [HeaderAttribute("Text")] // factor into level-specific scripts
+    public Dialogue sdialogue;
+
     // Start is called before the first frame update
     void Awake() {
         sentences = new Queue<string>();
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         audioSrc = GetComponent<AudioSource>();
+    }
+
+    void Start() {
+        StartDialogue(sdialogue);
     }
 
     // Update is called once per frame
@@ -71,6 +78,7 @@ public class DialogueManager : MonoBehaviour {
     void EndDialogue() {
         dialogueBox.SetActive(false);
         dialogueActive = false;
-    }
 
+        Destroy(this.gameObject);
+    }
 }
