@@ -282,34 +282,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &44191503 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6310594263013326390, guid: f4d5a7e0dde16794ea6b208c915c3436, type: 3}
-  m_PrefabInstance: {fileID: 6580557154443536624}
-  m_PrefabAsset: {fileID: 0}
---- !u!164 &44191508
-AudioReverbFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44191503}
-  m_Enabled: 1
-  m_DryLevel: 0
-  m_Room: 0
-  m_RoomHF: 0
-  m_DecayTime: 1
-  m_DecayHFRatio: 0.5
-  m_ReflectionsLevel: -10000
-  m_ReverbLevel: 0
-  m_ReverbDelay: 0.04
-  m_Diffusion: 100
-  m_Density: 100
-  m_HFReference: 5000
-  m_RoomLF: 0
-  m_LFReference: 250
-  m_ReflectionsDelay: 0
-  m_ReverbPreset: 27
 --- !u!1 &45075138 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6811692fd74b712499beaa1da582269e, type: 3}
@@ -9847,6 +9819,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7994871982766436613, guid: f4d5a7e0dde16794ea6b208c915c3436, type: 3}
       propertyPath: light
+      value: 
+      objectReference: {fileID: 667587412}
+    - target: {fileID: 7994871982766436613, guid: f4d5a7e0dde16794ea6b208c915c3436, type: 3}
+      propertyPath: myLight
       value: 
       objectReference: {fileID: 667587412}
     - target: {fileID: 7994871982766436613, guid: f4d5a7e0dde16794ea6b208c915c3436, type: 3}

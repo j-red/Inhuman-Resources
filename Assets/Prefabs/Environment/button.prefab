@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 6580557153712095348}
   - component: {fileID: 7994871982766436613}
   - component: {fileID: 3907134316601169251}
+  - component: {fileID: 8049543786909998546}
   m_Layer: 0
   m_Name: button
   m_TagString: Untagged
@@ -183,7 +184,7 @@ MonoBehaviour:
   weight: 0
   animTarget: {fileID: 0}
   targetName: Activated
-  light: {fileID: 0}
+  myLight: {fileID: 0}
   clickOn: {fileID: 8300000, guid: 1b399fa8f72345947945877b017d8f7b, type: 3}
   clickOff: {fileID: 8300000, guid: 5175576f1c09f154bb4f63f697040a11, type: 3}
 --- !u!82 &3907134316601169251
@@ -282,6 +283,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!164 &8049543786909998546
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310594263013326390}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: 0
+  m_RoomHF: 0
+  m_DecayTime: 1
+  m_DecayHFRatio: 0.5
+  m_ReflectionsLevel: -10000
+  m_ReverbLevel: 0
+  m_ReverbDelay: 0.04
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27
 --- !u!1 &6344904953379106727
 GameObject:
   m_ObjectHideFlags: 0

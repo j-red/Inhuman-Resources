@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour {
     private Vector3 mouseStart, mouseDelta;
     private PopulateAgentDisplay agentDisp;
     private AudioSource bgAudio;
-    public bool hasWon = false, hasLost = false;
+    public bool hasWon = false;
+    public bool hasLost = false;
     public GameObject confetti;
 
     private float pausedPitch = -1f; // pitch speed to lerp to when paused
@@ -207,5 +208,7 @@ public class GameManager : MonoBehaviour {
         // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         ResumeGame();
+        hasLost = false;
+        hasWon = false;
     }
 }

@@ -9,7 +9,7 @@ public class DialogueTrigger : MonoBehaviour {
     public GameObject introText, loseText, winText;
     
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
         mainCanvas = GameObject.Find("Canvas");
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
