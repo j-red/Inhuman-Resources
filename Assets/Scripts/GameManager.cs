@@ -7,13 +7,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    [HeaderAttribute ("Debug")] 
-    public bool debugMode = false;
-    [Range(1, 120)]
-    public int frameDelay = 15; // num frames to wait between each instance of new agent
-    private int delay = 0;
-    [SerializeField, Range(0, 1f)]
-    private float randomOffset = 0.1f;
+    [HeaderAttribute ("Core Logic")] 
     private GameObject agentContainer;
     private Text agentCounter;
     private Camera cam;
@@ -42,6 +36,7 @@ public class GameManager : MonoBehaviour {
     private Volume postProcessor;
     private float audioSwitchSpeed = 0.1f;
     private float initGrain;
+    private float startDelay = 5f; // wait 5 seconds before allowing lose conditions to be met with 0 agents
 
     [HeaderAttribute ("Camera Bounds")] 
     public Vector2 lowerLeft = new Vector2(-5, -5);
@@ -52,6 +47,15 @@ public class GameManager : MonoBehaviour {
     [HeaderAttribute ("Agents")] 
     public GameObject agent;
     public int numAgents = 0, numDead = 0, numSaved = 0, maxCt = 100, numToWin = 10;
+
+    [SerializeField, HeaderAttribute("Debug")]
+    private float gameTime = 0f;
+    public bool debugMode = false;
+    [Range(1, 120)]
+    public int frameDelay = 15; // num frames to wait between each instance of new agent
+    private int delay = 0;
+    [SerializeField, Range(0, 1f)]
+    private float randomOffset = 0.1f;
 
     // [HeaderAttribute ("Dialogs")] 
     private DialogueTrigger dialogTrigger;
@@ -83,6 +87,8 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        gameTime += Time.deltaTime;
+
         if (debugMode && Input.GetMouseButton(1) && !isPaused) {
             /* If debug mode is enabled and right mouse button pressed, create new agents at mouse position: */
             delay -= 1;
@@ -118,9 +124,7 @@ public class GameManager : MonoBehaviour {
 
         if (numSaved >= numToWin && !hasWon) {
             Win();
-        }
-
-        if (numAgents == 0 && !hasWon && !hasLost) {
+        } else if (numAgents <= 0 && !hasWon && !hasLost && gameTime >= startDelay) {
             Lose();
         }
     }
@@ -206,9 +210,17 @@ public class GameManager : MonoBehaviour {
 
     public void ResetActiveScene() { // From https://forum.unity.com/threads/how-to-fully-reset-a-scene-upon-restart.452463/
         // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        DisableAllDialogues();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         ResumeGame();
         hasLost = false;
         hasWon = false;
+    }
+
+    public void DisableAllDialogues() {
+        GameObject[] dialogues = GameObject.FindGameObjectsWithTag("Dialogue");
+        foreach (GameObject box in dialogues) {
+            Destroy(box);
+        }
     }
 }

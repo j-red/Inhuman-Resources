@@ -394,9 +394,10 @@ GameObject:
   - component: {fileID: 3816047415542586532}
   - component: {fileID: 3816047415542586535}
   - component: {fileID: 3816047415542586534}
+  - component: {fileID: 4223543656743010861}
   m_Layer: 5
   m_Name: 001 Intro
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -437,6 +438,15 @@ MonoBehaviour:
   dialogueText: {fileID: 3816047414297598088}
   dialogueActive: 0
   delayTime: 0.025
+  next: {fileID: 8300000, guid: d9d932583660cb84e8c6c056c8f6a5e1, type: 3}
+  speech: {fileID: 0}
+  intro: {fileID: 0}
+  end: {fileID: 8300000, guid: 26718a7298f18194dacccc49c29d1fb1, type: 3}
+  vols:
+  - 0.1
+  - 0.3
+  - 0.5
+  - 0.5
   pitchModulation: 0.2
   sdialogue:
     sentences:
@@ -458,7 +468,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9139108889829558919, guid: 5cba5c9fc74f8674ab994cfb6608b6a2, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
@@ -543,3 +553,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &4223543656743010861
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816047415542586533}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6e85815ab34324409b192ebfbcc2520, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

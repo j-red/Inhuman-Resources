@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 3816047415542586534}
   m_Layer: 5
   m_Name: 003 Win
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -437,6 +437,15 @@ MonoBehaviour:
   dialogueText: {fileID: 3816047414297598088}
   dialogueActive: 0
   delayTime: 0.025
+  next: {fileID: 8300000, guid: d9d932583660cb84e8c6c056c8f6a5e1, type: 3}
+  speech: {fileID: 0}
+  intro: {fileID: 0}
+  end: {fileID: 8300000, guid: 26718a7298f18194dacccc49c29d1fb1, type: 3}
+  vols:
+  - 0.1
+  - 0.3
+  - 0.5
+  - 0.5
   pitchModulation: 0.2
   sdialogue:
     sentences:
@@ -461,7 +470,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9139108889829558919, guid: 5cba5c9fc74f8674ab994cfb6608b6a2, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.05
   m_Pitch: 1
   Loop: 0

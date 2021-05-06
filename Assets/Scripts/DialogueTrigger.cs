@@ -15,16 +15,19 @@ public class DialogueTrigger : MonoBehaviour {
     }
 
     public void Intro() {
+        gm.DisableAllDialogues();
         Instantiate(introText, mainCanvas.transform);
         // new.GetComponent<Transform>().SetSiblingIndex(0);
     }
 
     public void Win() {
+        gm.DisableAllDialogues();
         Instantiate(winText, mainCanvas.transform);
         // new.GetComponent<Transform>().SetSiblingIndex(0);
     }
 
     public void Lose() {
+        gm.DisableAllDialogues();
         Instantiate(loseText, mainCanvas.transform);
         // new.GetComponent<Transform>().SetSiblingIndex(0);
     }

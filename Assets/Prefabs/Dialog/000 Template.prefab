@@ -223,7 +223,7 @@ RectTransform:
   m_GameObject: {fileID: 3816047414816364700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6960938, y: 1.0501, z: 1}
+  m_LocalScale: {x: 1.6960938, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3816047415168690024}
   m_RootOrder: 2
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80adfba3ad832f746a976b3df2ce76f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b29ac42b1fbad2b4583635ef697656ef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -395,8 +395,8 @@ GameObject:
   - component: {fileID: 3816047415542586535}
   - component: {fileID: 3816047415542586534}
   m_Layer: 5
-  m_Name: 002 Lose
-  m_TagString: Untagged
+  m_Name: 000 Template
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,13 +449,13 @@ MonoBehaviour:
   pitchModulation: 0.2
   sdialogue:
     sentences:
-    - "How unfortunate.\nYou let them all die.     \nWhat a <color=red>shame</color>..."
-    - 'I suppose you''ll
-
-      have to try again.
-
-      Press <color=red>''ESCAPE''</color>
-      to reset.'
+    - "Congratulations, human, \non your selection for\nthis worthwhile and \nhighly\r
+      enjoyable <color=red>job</color>!"
+    - "Look, your fellow human \nworkers aren't going to \ntheir next job. They need\r   
+      \n<color=orange>instructions</color>."
+    - "Get them to the \n<color=#56D34A>goal zone</color> and await \nfurther instruction."
+    - "Move quickly.           \nYou <color=red>don't</color> want \nto disappoint\r
+      me."
 --- !u!82 &3816047415542586534
 AudioSource:
   m_ObjectHideFlags: 0

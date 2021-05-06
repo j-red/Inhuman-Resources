@@ -26,7 +26,7 @@ public class AgentController : MonoBehaviour {
     [HeaderAttribute ("Sound Effects")] 
     public GameObject deathPFX;
     private AudioSource audioSrc;
-    public AudioClip deathSound, bumpSound;
+    public AudioClip deathSound, bumpSound, rescueSound;
 
     private float triggerTimeout = 0.3f, triggerCall = 0f;
 
@@ -84,19 +84,6 @@ public class AgentController : MonoBehaviour {
         /* Physics loop -- runs 50x per second. */
     }
 
-    // private void OnTriggerEnter2D(Collider2D other) {
-    //     /* Destroy Agent if they come into contact with a 'Kill Zone' */
-    //     if (other.gameObject.tag == "Kill") {
-    //         StartCoroutine("Kill");
-    //     }
-    //  
-    //     if (other.gameObject.tag == "Goal" && triggerCall == 0f) {
-    //         triggerCall = triggerTimeout;
-    //         StartCoroutine("Goal");
-    //         gm.numSaved += 1;
-    //     }
-    // }
-
     private void OnTriggerEnter(Collider other) {
         /* Destroy Agent if they come into contact with a 'Kill Zone' */
         if (other.gameObject.tag == "Kill" && triggerCall == 0f) {
@@ -106,8 +93,8 @@ public class AgentController : MonoBehaviour {
         }
         
         if (other.gameObject.tag == "Goal" && triggerCall == 0f) {
-            triggerCall = triggerTimeout;
             StartCoroutine("Goal");
+            triggerCall = triggerTimeout;
             gm.numSaved += 1;
         }
     }
@@ -156,8 +143,11 @@ public class AgentController : MonoBehaviour {
     IEnumerator Goal() {
         /* Coroutine code based on Unity manual, https://docs.unity3d.com/Manual/Coroutines.html. */
         Instantiate(deathPFX, transform.position, Quaternion.identity);
-        // deathSound.pitch = Random.Range(0.5f, 1.2f);
-        // deathSound.Play();
+        audioSrc.pitch = Random.Range(0.8f, 1.2f);
+        audioSrc.clip = rescueSound;
+        audioSrc.priority = 130;
+        audioSrc.volume = 0.6f;
+        audioSrc.Play();
 
         for (float i = 0; i < initDelay; i += Time.deltaTime) {
             /* This code simply waits initDelay seconds before triggering the shrink effect. */
