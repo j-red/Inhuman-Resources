@@ -2514,6 +2514,7 @@ MonoBehaviour:
   hasWon: 0
   hasLost: 0
   confetti: {fileID: 569486424827844814, guid: 46ac4c9f8e7c632478dd611a419c161e, type: 3}
+  FadeToBlack: {fileID: 8410357781145682884, guid: b8b16940e92406049b650f7600e26892, type: 3}
   zoomScalar: 2
   dragScale: 0.01
   zoomSpeed: 5
@@ -11016,7 +11017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8123350144680793399, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8123350144680793399, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_AnchorMax.x

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
     public bool hasWon = false;
     public bool hasLost = false;
     public GameObject confetti;
+    public GameObject FadeToBlack;
 
     private float pausedPitch = -1f; // pitch speed to lerp to when paused
 
@@ -57,7 +58,6 @@ public class GameManager : MonoBehaviour {
     [SerializeField, Range(0, 1f)]
     private float randomOffset = 0.1f;
 
-    // [HeaderAttribute ("Dialogs")] 
     private DialogueTrigger dialogTrigger;
 
     // Start is called before the first frame update, Awake is called even earlier.
@@ -127,11 +127,14 @@ public class GameManager : MonoBehaviour {
         } else if (numAgents <= 0 && !hasWon && !hasLost && gameTime >= startDelay) {
             Lose();
         }
-    }
 
-    // public void TriggerDialogue() {
-    //     FindObjectOfType<DialogueManager>().StartDialogue(sdialogue);
-    // }
+
+        /* End current level logic */
+        if (hasWon && Input.GetButtonDown("Submit") && GameObject.Find("FadeToBlack") == null) {
+            MoveToNextLevel();
+            Destroy(GameObject.Find("Agent Container"), 5); // remove one agent per frame after winning
+        }
+    }
 
     public void UpdateAgentCount() {
         // int maxCt = 36; // temp
@@ -222,5 +225,11 @@ public class GameManager : MonoBehaviour {
         foreach (GameObject box in dialogues) {
             Destroy(box);
         }
+    }
+
+    public void MoveToNextLevel() {
+        /* Eventually, this should contain the logic for moving to the next scene.
+           For now, this simply instantiates a 'Fade to Black' UI Prefab. */
+        Instantiate(FadeToBlack, GameObject.Find("Canvas").transform);
     }
 }
