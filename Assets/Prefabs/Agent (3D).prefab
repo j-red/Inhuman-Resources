@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9165009940007054567}
   - component: {fileID: 6464817977061245897}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8458645801293601947}
   - component: {fileID: 8650656696700991082}
   - component: {fileID: 8220556945532397069}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Agent (3D)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8650656697840943044}
   - component: {fileID: 8650656697840943045}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: circle sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
