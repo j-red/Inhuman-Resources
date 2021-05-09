@@ -454,7 +454,7 @@ MonoBehaviour:
     - "Looks like they must have \nturned on the <color=red>exhaust \nfan</color>...
       Think you can get\nthem across?\n"
     - "They need to reach the \n<color=#56D34A>goal zone</color> on the right.    
-      \nThough you may need to\nfind a way to move that <color=red>grate</color>..."
+      \nThough you may need to\nfind a way to move that \n<color=red>grate</color>..."
     - "Move quickly.           \nYou <color=red>don't</color> want \nto disappoint\r
       me."
 --- !u!82 &3816047415542586534
