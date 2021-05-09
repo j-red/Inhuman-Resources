@@ -394,8 +394,9 @@ GameObject:
   - component: {fileID: 3816047415542586532}
   - component: {fileID: 3816047415542586535}
   - component: {fileID: 3816047415542586534}
+  - component: {fileID: 2610333989900479321}
   m_Layer: 5
-  m_Name: 003 Win
+  m_Name: 004 End
   m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,7 +419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -234}
+  m_AnchoredPosition: {x: 59, y: -335}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3816047415542586535
@@ -443,22 +444,19 @@ MonoBehaviour:
   end: {fileID: 8300000, guid: 26718a7298f18194dacccc49c29d1fb1, type: 3}
   vols:
   - 0.1
-  - 0.3
-  - 0.5
-  - 0.5
+  - 0.1
+  - 0.1
+  - 0.1
   pitchModulation: 0.2
   sdialogue:
     sentences:
-    - "<color=#FD5DA8>Amazing work!</color>     \nThat's enough for now.\nIf we need
-      more, we can\ncome back later."
-    - 'For now, there''s more
+    - "Oops! Nevermind!      \nLooks like\n<color=red>that's all there is</color>\nfor
+      now."
+    - "Why don't you come \nback in a little bit and\nwe'll see what else\nthere
+      is for you to do?"
+    - '<color=purple>Thanks for playing!</color>
 
-      work to be done! Press
-
-      <color=#6D2EFF>''Enter''</color>
-      to move to the
-
-      next room.'
+      Let us know what you think!'
 --- !u!82 &3816047415542586534
 AudioSource:
   m_ObjectHideFlags: 0
@@ -555,3 +553,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2610333989900479321
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816047415542586533}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a6a23af9cfbd1a4ba63abb0743c73dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

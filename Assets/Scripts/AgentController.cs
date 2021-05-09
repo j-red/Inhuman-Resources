@@ -7,6 +7,7 @@ public class AgentController : MonoBehaviour {
     private Rigidbody rb;
     [HeaderAttribute ("Movement"), Range(1f, 10f)]
     public float speed = 5f;
+    public float maxSpeed = 10f;
     private float weight;
     private Vector3 init;
 
@@ -17,8 +18,10 @@ public class AgentController : MonoBehaviour {
 
     private float grav = 0f;
 
-    public enum AgentMoveType { Velocity, Position, Thrust, Torque };
+    public enum AgentMoveType { Velocity, Position, Thrust, Torque, ThrustCapped };
     public AgentMoveType agentMoveType;
+
+    public ForceMode mode;
 
     [SerializeField]
     private bool debugMode = false;
@@ -70,6 +73,11 @@ public class AgentController : MonoBehaviour {
                 // rb.AddTorque(-movement);
                 rb.AddTorque(new Vector3(-movement, 0, 0));
                 break;
+            case AgentMoveType.ThrustCapped:
+                Vector3 move_thrust = new Vector3(movement, -grav, 0);
+                rb.AddForce(move_thrust * Time.deltaTime * speed, mode);
+                rb.AddTorque(new Vector3(-x, 0, 0));
+                break;
         }
 
         triggerCall = Mathf.Max(triggerCall - Time.deltaTime, 0f); // update time delay for trigger calls
@@ -82,6 +90,8 @@ public class AgentController : MonoBehaviour {
 
     void FixedUpdate() {
         /* Physics loop -- runs 50x per second. */
+        float x = Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed);  // clamp agent horizontal velocity
+        rb.velocity = new Vector3(x, rb.velocity.y, rb.velocity.z);
     }
 
     private void OnTriggerEnter(Collider other) {
