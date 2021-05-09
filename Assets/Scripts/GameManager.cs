@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour {
     [HeaderAttribute ("Agents")] 
     public GameObject agent;
     public int numAgents = 0, numDead = 0, numSaved = 0, maxCt = 100, numToWin = 10;
+    public string counterText = "Agents Recovered: ";
 
     [SerializeField, HeaderAttribute("Debug")]
     private float gameTime = 0f;
@@ -59,6 +60,10 @@ public class GameManager : MonoBehaviour {
     private float randomOffset = 0.1f;
 
     private DialogueTrigger dialogTrigger;
+
+    private float endGameTimer = 0f;
+    private bool hasEnded = false;
+    public GameObject EndGameDialogue;
 
     // Start is called before the first frame update, Awake is called even earlier.
     void Awake() {
@@ -133,6 +138,17 @@ public class GameManager : MonoBehaviour {
         if (hasWon && Input.GetButtonDown("Submit") && GameObject.Find("FadeToBlack") == null) {
             MoveToNextLevel();
             Destroy(GameObject.Find("Agent Container"), 5); // remove one agent per frame after winning
+
+            endGameTimer = 5f;
+        }
+
+        if (hasWon && !hasEnded && endGameTimer > 0) { /* Timer to delay instantiation of endgame dialogue. */
+            endGameTimer -= Time.deltaTime;
+
+            if (endGameTimer <= 0) {
+                Instantiate(EndGameDialogue, GameObject.Find("Canvas").transform);
+                hasEnded = true;
+            }
         }
     }
 
@@ -143,7 +159,7 @@ public class GameManager : MonoBehaviour {
         numAgents = agentContainer.transform.childCount;
         // agentCounter.text = "Agents: " + numAgents.ToString(formatString) + "/" + maxCt.ToString(formatString); // convert number of agents to string with leading zeroes
 
-        agentCounter.text = "Agents: " + numSaved.ToString(formatString) + "/" + numToWin.ToString(formatString); // convert number of agents to string with leading zeroes
+        agentCounter.text = counterText + numSaved.ToString(formatString) + "/" + numToWin.ToString(formatString); // convert number of agents to string with leading zeroes
 
         // agentDisp.UpdateAgentColors(numAgents, maxCt - numAgents - 2, 1); // num active, inactive, dead
         agentDisp.UpdateAgentColors(numAgents, numSaved); // num active
