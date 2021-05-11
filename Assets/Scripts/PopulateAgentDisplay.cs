@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PopulateAgentDisplay : MonoBehaviour {
     public int numAgents = 100;
     public int width = 20, height = 5;
-    public int numSaved = 0;
+    public int numRecovered = 0;
 
     public float dx = 18f, dy = 36f;
     
@@ -38,19 +38,18 @@ public class PopulateAgentDisplay : MonoBehaviour {
 
     // public void UpdateAgentColors(int numActive, int numInactive, int numDead) {
     public void UpdateAgentColors(int numActive, int numSaved) {
+        numRecovered = numSaved;
+
         int i = 0;
         for (; i < numActive && i < indicators.Length; i ++) {
             indicators[i].GetComponent<Image>().color = active;
         }
-        // for (; i < numActive + numInactive; i ++) {
-        //     indicators[i].GetComponent<Image>().color = inactive;
-        // }
 
         for (; i < indicators.Length; i ++) {
             indicators[i].GetComponent<Image>().color = inactive;
         }
 
-        for (i = 1; i < numSaved && i <= indicators.Length; i ++) {
+        for (i = 1; i <= numSaved && i <= indicators.Length; i ++) {
             indicators[indicators.Length - i].GetComponent<Image>().color = saved;
             // print("Index" + (indicators.Length - i));
         }
