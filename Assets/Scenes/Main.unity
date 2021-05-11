@@ -2626,14 +2626,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35e986582d6c3d48a9152cd313db840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMode: 0
-  frameDelay: 10
-  randomOffset: 0.1
   isPaused: 0
   pauseMenu: {fileID: 1578380431}
   hasWon: 0
   hasLost: 0
   confetti: {fileID: 569486424827844814, guid: 46ac4c9f8e7c632478dd611a419c161e, type: 3}
+  FadeToBlack: {fileID: 0}
   zoomScalar: 2
   dragScale: 0.01
   zoomSpeed: 5
@@ -2646,6 +2644,12 @@ MonoBehaviour:
   numSaved: 0
   maxCt: 100
   numToWin: 18
+  counterText: 'Agents Recovered: '
+  gameTime: 0
+  debugMode: 0
+  frameDelay: 10
+  randomOffset: 0.1
+  EndGameDialogue: {fileID: 0}
 --- !u!4 &456183503
 Transform:
   m_ObjectHideFlags: 0
@@ -10248,23 +10252,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8123350143663634434, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.79998
       objectReference: {fileID: 0}
     - target: {fileID: 8123350143663634434, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8123350143737509991, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.79998
       objectReference: {fileID: 0}
     - target: {fileID: 8123350143737509991, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8123350143737509991, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.79998
       objectReference: {fileID: 0}
     - target: {fileID: 8123350144424171960, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
@@ -10301,6 +10305,10 @@ PrefabInstance:
     - target: {fileID: 8123350144680793384, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_Name
       value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123350144680793384, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8123350144680793399, guid: f59b09f455c9d32418adb4f7a3108744, type: 3}
       propertyPath: m_Pivot.x

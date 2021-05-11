@@ -273,7 +273,7 @@ MonoBehaviour:
   speed: 6
   maxSpeed: 10
   killDelay: 0.1
-  agentMoveType: 4
+  agentMoveType: 2
   mode: 1
   debugMode: 0
   deathPFX: {fileID: 3293669587947677433, guid: b7e955ed7bf0bae4ca07bcb29aae8031, type: 3}

@@ -20,6 +20,9 @@ public class AgentController : MonoBehaviour {
 
     public enum AgentMoveType { Velocity, Position, Thrust, Torque, ThrustCapped };
     public AgentMoveType agentMoveType;
+    public float airControl = 0.1f;
+
+    private bool onGround = false;
 
     public ForceMode mode;
 
@@ -62,12 +65,15 @@ public class AgentController : MonoBehaviour {
                 rb.MovePosition(rb.position + velocity); 
                 break;
             case AgentMoveType.Thrust: // C: Add force
-                // Vector2 thrust = new Vector2(movement, -grav);
-                // rb.AddForce(thrust * Time.deltaTime * speed, ForceMode2D.Impulse);
-                Vector3 thrust = new Vector3(movement, -grav, 0);
-                rb.AddForce(thrust * Time.deltaTime * speed, ForceMode.Impulse);
-                // rb.AddTorque(-x);
-                rb.AddTorque(new Vector3(-x, 0, 0));
+                if (onGround) {
+                    Vector3 motion = new Vector3(movement, -grav, 0);
+                    rb.AddForce(motion * Time.deltaTime * speed, mode);
+                    rb.AddTorque(new Vector3(-x, 0, 0));
+                } else {
+                    Vector3 motion = new Vector3(movement, -grav, 0);
+                    rb.AddForce(motion * Time.deltaTime * speed * airControl, mode);
+                    rb.AddTorque(new Vector3(-x, 0, 0));
+                }
                 break;
             case AgentMoveType.Torque: // D: Add rotation torque based on Horizontal axis input. See https://docs.unity3d.com/ScriptReference/Rigidbody2D.AddTorque.html.
                 // rb.AddTorque(-movement);
@@ -114,6 +120,14 @@ public class AgentController : MonoBehaviour {
         audioSrc.priority = 200;
         audioSrc.pitch = Random.Range(0.8f, 2f);
         audioSrc.Play();
+    }
+
+    private void OnCollisionStay(Collision other) {
+        onGround = true;
+    }
+
+    private void OnCollisionExit(Collision other) {
+        onGround = false;
     }
 
     private void OnTriggerExit(Collider other) {
