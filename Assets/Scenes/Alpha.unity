@@ -12383,7 +12383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 579030932155572498, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
       propertyPath: instant
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 579030932155572498, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
       propertyPath: targetParent
