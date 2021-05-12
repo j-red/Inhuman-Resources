@@ -23,6 +23,8 @@ public class DialogueManager : MonoBehaviour {
     [Range(0, 1f), Tooltip("Noise factor for pitch modulation.")]
     public float pitchModulation = 0.1f;
 
+    private bool isTyping = false;
+    private string currentSentence = "";
 
     [HeaderAttribute("Text")] // factor into level-specific scripts
     public Dialogue sdialogue;
@@ -81,17 +83,26 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void DisplayNextSentence() {
-        if (sentences.Count == 0) {
-            EndDialogue();
-            return;
+        if (isTyping) {
+            // Finish this sentence first
+            isTyping = false;
+            dialogueText.text = currentSentence;
+            StopAllCoroutines();
+        } else { // clear box and move to next sentence
+            if (sentences.Count == 0) {
+                EndDialogue();
+                return;
+            }
+            isTyping = true;
+            string sentence = sentences.Dequeue();
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
         }
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
     }
 
     IEnumerator TypeSentence (string sentence) { // animates dialogue one letter at a time 
         dialogueText.text = "";
+        currentSentence = sentence;
         float tmpPitch = audioSrc.pitch;
         foreach (char letter in sentence.ToCharArray()) {
             dialogueText.text += letter;
@@ -104,6 +115,7 @@ public class DialogueManager : MonoBehaviour {
             }
             yield return new WaitForSeconds(delayTime);
         }
+        isTyping = false;
     }
 
     void EndDialogue() {

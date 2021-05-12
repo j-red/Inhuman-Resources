@@ -449,8 +449,8 @@ MonoBehaviour:
   pitchModulation: 0.2
   sdialogue:
     sentences:
-    - "<color=#FD5DA8>Amazing work!</color>     \nThat's enough for now.\nIf we need
-      more, we can\ncome back later."
+    - "<color=#FD5DA8>Incredible!</color>     \nThat's enough workers for \nnow.
+      If we need more, we \ncan come back later."
     - 'For now, there''s more
 
       work to be done! Press

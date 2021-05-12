@@ -16,11 +16,17 @@ public class DialogueTrigger : MonoBehaviour {
 
     public void Intro() {
         gm.DisableAllDialogues();
+        Invoke("IntroText", 1f);
+        // new.GetComponent<Transform>().SetSiblingIndex(0);
+    }
+
+    private void IntroText() {
         if (introText != null) {
             Instantiate(introText, mainCanvas.transform);
         }
-        // new.GetComponent<Transform>().SetSiblingIndex(0);
     }
+
+    
 
     public void Win() {
         gm.DisableAllDialogues();

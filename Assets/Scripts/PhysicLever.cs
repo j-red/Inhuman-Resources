@@ -40,6 +40,10 @@ public class PhysicLever : MonoBehaviour {
         
         if (isActive) {
             anim.SetBool("Active", true);
+            
+            if (animTarget != null) {
+                animTarget.SetBool(targetName, true);
+            }
         }
         
         // if (currentWeight >= weightToActivate && !isActive) {
@@ -50,9 +54,9 @@ public class PhysicLever : MonoBehaviour {
         //     PlaySound(clickOff);
         // }
 
-        if (animTarget != null) {
-            animTarget.SetBool(targetName, isActive);
-        }
+        // if (animTarget != null) {
+        //     animTarget.SetBool(targetName, isActive);
+        // }
         
         if (myLight != null) {
             myLight.active = isActive;

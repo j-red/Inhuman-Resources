@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3427388056288078290}
   - component: {fileID: 5086021704964715810}
+  - component: {fileID: 6160762941735155736}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -47,5 +48,29 @@ MonoBehaviour:
   dx: 0
   dy: 0
   count: 10
+  anim: {fileID: 0}
   targetParent: {fileID: 0}
   delay: 0
+  spawnDelay: 1
+  instant: 0
+  destroyOnEnd: 1
+  randomizeSpawnRot: 0
+--- !u!95 &6160762941735155736
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121531275985159829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

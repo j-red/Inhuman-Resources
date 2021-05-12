@@ -450,13 +450,16 @@ MonoBehaviour:
   pitchModulation: 0.2
   sdialogue:
     sentences:
-    - "Hmm. Well, that's \n<color=red>interesting</color>...       "
-    - "Looks like they must have \nturned on the <color=red>exhaust \nfan</color>...
-      Think you can get\nthem across?\n"
+    - "Hello and WELCOME to\nyour first day in the \n<b>Department of Organic Manpower</b>!"
+    - "Here, your job is to help\nus coordinate the vast\nquantities of workers\nperforming
+      their \n<b>amazing jobs</b>!"
+    - "Let's get started. You can\ninstruct the workers to \nmove left or right using
+      \nthe <b>A</b> and <b>D</b> keys. \nIt's easy!"
+    - "It looks like the workers \nmust have turned on the \n<color=red>exhaust fan</color>...
+      Think you can get them across?\n"
     - "They need to reach the \n<color=#56D34A>goal zone</color> on the right.    
       \nThough you may need to\nfind a way to move that \n<color=red>grate</color>..."
-    - "Move quickly.           \nYou <color=red>don't</color> want \nto disappoint\r
-      me."
+    - "Move quickly.           \nYou <color=red>don't</color> want \nto keep me waiting!"
 --- !u!82 &3816047415542586534
 AudioSource:
   m_ObjectHideFlags: 0
