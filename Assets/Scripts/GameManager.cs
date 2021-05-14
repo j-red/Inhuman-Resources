@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour {
     private float pausedPitch = -1f; // pitch speed to lerp to when paused
 
     [HeaderAttribute ("Camera Controls")] 
-    // [Range(30f, 120f)]
-    // public float targetFOV = 40f;
     private float targetSize, targetFOV;
     [SerializeField, Range(0, 10f)]
     private float zoomScalar = 3f;
@@ -40,6 +38,7 @@ public class GameManager : MonoBehaviour {
     private float startDelay = 5f; // wait 5 seconds before allowing lose conditions to be met with 0 agents
 
     [HeaderAttribute ("Camera Bounds")] 
+    public float minFOV = 30f, maxFOV = 120f;
     public Vector2 lowerLeft = new Vector2(-5, -5);
     public Vector2 upperRight = new Vector2(5, 5);
     [SerializeField]
@@ -184,7 +183,6 @@ public class GameManager : MonoBehaviour {
             currentCamPos = new Vector2(cam.transform.position.x, cam.transform.position.y);
 
             // Perspective (3D) Zoom
-            float minFOV = 30f, maxFOV = 120f;
             targetFOV = Mathf.Clamp(targetFOV, minFOV, maxFOV);
             cam.fieldOfView = Mathf.SmoothStep(cam.fieldOfView, targetFOV, zoomSpeed);
 

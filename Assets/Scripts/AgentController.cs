@@ -14,7 +14,7 @@ public class AgentController : MonoBehaviour {
     [SerializeField, Range(0.01f, 3f)]
     private float killDelay = 2f;
     private float initDelay = 0.1f;
-    private GameManager gm; // Game Manager
+    private static GameManager gm; // Game Manager
 
     private float grav = 0f;
 
@@ -35,6 +35,10 @@ public class AgentController : MonoBehaviour {
     public AudioClip deathSound, bumpSound, rescueSound;
 
     private float triggerTimeout = 0.3f, triggerCall = 0f;
+    
+    public bool cameraShake = true;
+    private CameraShake cs;
+    public float shakeAmount = 0.1f, shakeDuration = 0.02f;
 
     // Start is called before the first frame update
     void Start() {
@@ -45,6 +49,7 @@ public class AgentController : MonoBehaviour {
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         audioSrc = GetComponent<AudioSource>();
         gm.UpdateAgentCount();
+        cs = Camera.main.gameObject.GetComponent<CameraShake>();
     }
 
     // Update is called once per frame
@@ -142,6 +147,10 @@ public class AgentController : MonoBehaviour {
     IEnumerator Kill() {
         /* Coroutine code based on Unity manual, https://docs.unity3d.com/Manual/Coroutines.html. */
 
+        if (cameraShake && cs != null) {
+            cs.ShakeCamera(shakeAmount, shakeDuration, transform.position);
+        }
+
         Instantiate(deathPFX, transform.position, Quaternion.identity);
         audioSrc.pitch = Random.Range(0.5f, 1.2f);
         audioSrc.clip = deathSound;
@@ -161,7 +170,7 @@ public class AgentController : MonoBehaviour {
         transform.parent = null;
         gm.UpdateAgentCount();
 
-        Destroy(this.gameObject); /* Destroy agent GameObject after initDelay + killDelay seconds */
+        if (this.gameObject != null) Destroy(this.gameObject); /* Destroy agent GameObject after initDelay + killDelay seconds */
     }
 
     IEnumerator Goal() {
