@@ -67,5 +67,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AgentSpawner Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6160762941735155736, guid: dc73028e81554b34f9aa02cf576b391c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dc73028e81554b34f9aa02cf576b391c, type: 3}

@@ -41,7 +41,7 @@ public class Spawner : MonoBehaviour {
             spawnDelayIndex += Time.deltaTime;
         }
 
-        if (anim.GetBool("Active")) {
+        if (anim != null && anim.GetBool("Active")) {
             if (spawnDelayIndex >= spawnDelay) {
                 spawnDelayIndex = 0f;
                 StartCoroutine("Spawn");
