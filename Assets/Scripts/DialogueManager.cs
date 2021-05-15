@@ -184,6 +184,7 @@ public class DialogueManager : MonoBehaviour {
             }
 
             if (continueAnimator.GetBool("Interacting")) {
+                interactDelayTime *= 0.99f;
                 yield return new WaitForSeconds(interactDelayTime);
             } else {
                 yield return new WaitForSeconds(delayTime);
