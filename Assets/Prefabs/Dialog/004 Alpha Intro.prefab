@@ -450,7 +450,7 @@ MonoBehaviour:
   pitchModulation: 0.2
   sdialogue:
     sentences:
-    - "Hello and WELCOME to\nyour first day in the \n<b>Department of Organic Manpower</b>!"
+    - "Hello and WELCOME to\nyour first day in the \n<b>Department of Organic \nManpower</b>!"
     - "Here, your job is to help\nus coordinate the vast\nquantities of workers\nperforming
       their \n<b>amazing jobs</b>!"
     - "Let's get started. You can\ninstruct the workers to \nmove left or right using

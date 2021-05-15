@@ -26,16 +26,17 @@ public class AgentController : MonoBehaviour {
 
     public ForceMode mode;
 
-    [SerializeField]
-    private bool debugMode = false;
-
     [HeaderAttribute ("Sound Effects")] 
     public GameObject deathPFX;
     private AudioSource audioSrc;
     public AudioClip deathSound, bumpSound, rescueSound;
 
+    [HeaderAttribute ("Debug"), Range(1f, 10f), SerializeField]
+    private bool debugMode = false;
+    public bool invincible = false;
     private float triggerTimeout = 0.3f, triggerCall = 0f;
-    
+
+    [HeaderAttribute ("Camera Shake")] 
     public bool cameraShake = true;
     private CameraShake cs;
     public float shakeAmount = 0.1f, shakeDuration = 0.02f;
@@ -107,7 +108,7 @@ public class AgentController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         /* Destroy Agent if they come into contact with a 'Kill Zone' */
-        if (other.gameObject.tag == "Kill" && triggerCall == 0f) {
+        if (other.gameObject.tag == "Kill" && triggerCall == 0f && !invincible) {
             StartCoroutine("Kill");
             triggerCall = triggerTimeout;
             gm.numDead += 1;

@@ -276,12 +276,13 @@ MonoBehaviour:
   agentMoveType: 2
   airControl: 0.1
   mode: 1
-  debugMode: 0
   deathPFX: {fileID: 3293669587947677433, guid: b7e955ed7bf0bae4ca07bcb29aae8031, type: 3}
   deathSound: {fileID: 8300000, guid: c77ea58058ae7c043b8d13e1a960ecec, type: 3}
   bumpSound: {fileID: 8300000, guid: 0f44aefbfe9f55d45817a567cbf1329f, type: 3}
   rescueSound: {fileID: 8300000, guid: 04ebaf0ba88d20b4481f8502b1233f42, type: 3}
-  cameraShake: 1
+  debugMode: 0
+  invincible: 0
+  cameraShake: 0
   shakeAmount: 10
   shakeDuration: 0.02
 --- !u!164 &8220556945532397069

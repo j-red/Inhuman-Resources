@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 3816047415542586534}
   - component: {fileID: 2610333989900479321}
   m_Layer: 5
-  m_Name: 004 End
+  m_Name: 005 End
   m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,9 +454,7 @@ MonoBehaviour:
       now."
     - "Why don't you come \nback in a little bit and\nwe'll see what else\nthere
       is for you to do?"
-    - '<color=purple>Thanks for playing!</color>
-
-      Let us know what you think!'
+    - "<color=purple>Thanks for playing!</color>\nLet us know what you \nthink!"
 --- !u!82 &3816047415542586534
 AudioSource:
   m_ObjectHideFlags: 0
