@@ -35,7 +35,7 @@ public class DialogueManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Awake() {
-        interactDelayTime = delayTime / 2f;
+        interactDelayTime = delayTime / 4f;
         sentences = new Queue<string>();
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         audioSrc = GetComponent<AudioSource>();
@@ -61,8 +61,17 @@ public class DialogueManager : MonoBehaviour {
             continueAnimator.SetBool("Interacting", false);
         }
 
-        if (Input.GetButtonDown(interactBtn)) {
+        if (Input.GetButtonDown(interactBtn) && !gm.isPaused) {
             wasTypingWhenBtnPressed = isTyping;
+            // if (!isTyping) {
+            //     DisplayNextSentence();
+            //     if (next != null) {
+            //         audioSrc.clip = next;
+            //         audioSrc.volume = vols[0];
+            //         audioSrc.pitch = 1f;
+            //         audioSrc.Play();
+            //     }
+            // }
         }
 
         if (dialogueActive && Input.GetButtonUp(interactBtn) && !gm.isPaused) {
