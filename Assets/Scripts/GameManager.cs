@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour {
             int ms = (int)((gameTime % 1) * 1000),
                 min = (int)(gameTime / 60),
                 s = (int)(gameTime % 60);
-            gameTimer.text = "Time: " + min.ToString(fmat) + ":" + s.ToString(fmat) + ":" + ms.ToString(fmat);
+            gameTimer.text = "Time: " + min.ToString(fmat) + ":" + s.ToString(fmat) + ":" + ms.ToString("D3");
         }
             
 

@@ -12,14 +12,16 @@ public class ClickButton : MonoBehaviour {
     public GameObject instantiationTarget;
     public Vector3 instantiationPosition;
     private float timer = 1f;
+    public bool isEnabled = true;
 
     private void OnMouseDown() {
-        active = true;
+        if (isEnabled)
+            active = true;
     }
 
     private void OnMouseUp() {
-        active = false;
-
+        if (isEnabled)
+            active = false;
     }
 
     // Start is called before the first frame update
