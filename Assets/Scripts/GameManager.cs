@@ -49,17 +49,20 @@ public class GameManager : MonoBehaviour {
     public int numAgents = 0, numDead = 0, numSaved = 0, maxCt = 100, numToWin = 10;
     public string counterText = "Agents Recovered: ";
 
+    [HeaderAttribute("Setup")]
+    public float goldTime = 30f, silverTime = 60f;
+    public int goldAgents = 80, silverAgents = 50;
+    public float gameTime = 0f;
+    private Text gameTimer;
+
     [SerializeField, HeaderAttribute("Debug")]
-    private float gameTime = 0f;
     public bool debugMode = false;
     [Range(1, 120)]
     public int frameDelay = 15; // num frames to wait between each instance of new agent
     private int delay = 0;
     [SerializeField, Range(0, 1f)]
     private float randomOffset = 0.1f;
-
     private DialogueTrigger dialogTrigger;
-
     private float endGameTimer = 0f;
     private bool hasEnded = false;
     public GameObject EndGameDialogue;
@@ -87,11 +90,22 @@ public class GameManager : MonoBehaviour {
     private void Start() {
         dialogTrigger = GetComponent<DialogueTrigger>();
         dialogTrigger.Intro();
+
+        gameTimer = GameObject.Find("Game Timer").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update() {
-        gameTime += Time.deltaTime;
+        if (!isPaused) {
+            gameTime += Time.deltaTime; // increment game time clock whenever unpaused
+            string fmat = "D2"; // use 2 leading zeros in timer text
+
+            int ms = (int)((gameTime % 1) * 1000),
+                min = (int)(gameTime / 60),
+                s = (int)(gameTime % 60);
+            gameTimer.text = "Time: " + min.ToString(fmat) + ":" + s.ToString(fmat) + ":" + ms.ToString(fmat);
+        }
+            
 
         if (debugMode && Input.GetMouseButton(1) && !isPaused) {
             /* If debug mode is enabled and right mouse button pressed, create new agents at mouse position: */
