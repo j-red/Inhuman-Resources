@@ -20,15 +20,20 @@ public class Spawner : MonoBehaviour {
     public bool randomizeSpawnRot = false;
     public bool scripted = false; // if this spawner is controlled by code
 
+    public int maxChildCount = -1;
+
     // Start is called before the first frame update
     void Start() {
-        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        GameObject g = GameObject.Find("Game Manager");
+        if (g != null) {
+            gm = g.GetComponent<GameManager>();
+        }
         anim = GetComponent<Animator>();
         if (instant) {
             for (int i = 0; i < count; i ++) {
                 Instantiate(target, transform.position + new Vector3(Random.Range(-dx, dx), Random.Range(-dy, dy), 0f), Quaternion.identity, targetParent);
             }
-            gm.UpdateAgentCount();
+            if (gm != null) gm.UpdateAgentCount();
         } else {
             if (!scripted) {
                 StartCoroutine("Spawn");
@@ -51,6 +56,14 @@ public class Spawner : MonoBehaviour {
 
     IEnumerator Spawn() {
         for (int i = 0; i < count; i ++) {
+            if (maxChildCount > 0) {
+                if (targetParent.transform.childCount >= maxChildCount) {
+                    i --;
+                    yield return new WaitForSeconds(delay);
+                    continue;
+                }
+            }
+
             if (randomizeSpawnRot) {
                 Instantiate(target, transform.position + new Vector3(Random.Range(-dx, dx), Random.Range(-dy, dy), 0f), Random.rotation, targetParent);
             } else {

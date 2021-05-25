@@ -14,7 +14,7 @@ public class AgentController : MonoBehaviour {
     [SerializeField, Range(0.01f, 3f)]
     private float killDelay = 2f;
     private float initDelay = 0.1f;
-    private static GameManager gm; // Game Manager
+    private static GameManager gm = null; // Game Manager
 
     private float grav = 0f;
 
@@ -34,6 +34,7 @@ public class AgentController : MonoBehaviour {
     [HeaderAttribute ("Debug"), Range(1f, 10f), SerializeField]
     private bool debugMode = false;
     public bool invincible = false;
+    public bool noControl = false;
     private float triggerTimeout = 0.3f, triggerCall = 0f;
 
     [HeaderAttribute ("Camera Shake")] 
@@ -47,9 +48,12 @@ public class AgentController : MonoBehaviour {
         // rb = GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody>();
         weight = rb.mass;
-        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        GameObject g = GameObject.Find("Game Manager");
+        if (g != null) {
+            gm = g.GetComponent<GameManager>();
+            gm.UpdateAgentCount();
+        }
         audioSrc = GetComponent<AudioSource>();
-        gm.UpdateAgentCount();
         cs = Camera.main.gameObject.GetComponent<CameraShake>();
     }
 
@@ -60,37 +64,40 @@ public class AgentController : MonoBehaviour {
 
         float movement = x * speed;
         
-        switch (agentMoveType) { // RB2D alternatives commented out
-            case AgentMoveType.Velocity:
-                // rb.velocity = new Vector2(movement, rb.velocity.y - grav); // A: update velocity directly -- works well for horizontal movement, but not for airborne/vertical
-                rb.velocity = new Vector3(movement, rb.velocity.y - grav, 0);
-                break;
-            case AgentMoveType.Position:
-                // Vector2 velocity = new Vector2(x * speed * Time.fixedDeltaTime, 0); // B: use Rigidbody2D.MovePosition -- not smooth
-                Vector3 velocity = new Vector3(x * speed * Time.fixedDeltaTime, 0, 0);
-                rb.MovePosition(rb.position + velocity); 
-                break;
-            case AgentMoveType.Thrust: // C: Add force
-                if (onGround) {
-                    Vector3 motion = new Vector3(movement, -grav, 0);
-                    rb.AddForce(motion * Time.deltaTime * speed, mode);
+        if (!noControl) {
+            switch (agentMoveType) { // RB2D alternatives commented out
+                case AgentMoveType.Velocity:
+                    // rb.velocity = new Vector2(movement, rb.velocity.y - grav); // A: update velocity directly -- works well for horizontal movement, but not for airborne/vertical
+                    rb.velocity = new Vector3(movement, rb.velocity.y - grav, 0);
+                    break;
+                case AgentMoveType.Position:
+                    // Vector2 velocity = new Vector2(x * speed * Time.fixedDeltaTime, 0); // B: use Rigidbody2D.MovePosition -- not smooth
+                    Vector3 velocity = new Vector3(x * speed * Time.fixedDeltaTime, 0, 0);
+                    rb.MovePosition(rb.position + velocity); 
+                    break;
+                case AgentMoveType.Thrust: // C: Add force
+                    if (onGround) {
+                        Vector3 motion = new Vector3(movement, -grav, 0);
+                        rb.AddForce(motion * Time.deltaTime * speed, mode);
+                        rb.AddTorque(new Vector3(-x, 0, 0));
+                    } else {
+                        Vector3 motion = new Vector3(movement, -grav, 0);
+                        rb.AddForce(motion * Time.deltaTime * speed * airControl, mode);
+                        rb.AddTorque(new Vector3(-x, 0, 0));
+                    }
+                    break;
+                case AgentMoveType.Torque: // D: Add rotation torque based on Horizontal axis input. See https://docs.unity3d.com/ScriptReference/Rigidbody2D.AddTorque.html.
+                    // rb.AddTorque(-movement);
+                    rb.AddTorque(new Vector3(-movement, 0, 0));
+                    break;
+                case AgentMoveType.ThrustCapped:
+                    Vector3 move_thrust = new Vector3(movement, -grav, 0);
+                    rb.AddForce(move_thrust * Time.deltaTime * speed, mode);
                     rb.AddTorque(new Vector3(-x, 0, 0));
-                } else {
-                    Vector3 motion = new Vector3(movement, -grav, 0);
-                    rb.AddForce(motion * Time.deltaTime * speed * airControl, mode);
-                    rb.AddTorque(new Vector3(-x, 0, 0));
-                }
-                break;
-            case AgentMoveType.Torque: // D: Add rotation torque based on Horizontal axis input. See https://docs.unity3d.com/ScriptReference/Rigidbody2D.AddTorque.html.
-                // rb.AddTorque(-movement);
-                rb.AddTorque(new Vector3(-movement, 0, 0));
-                break;
-            case AgentMoveType.ThrustCapped:
-                Vector3 move_thrust = new Vector3(movement, -grav, 0);
-                rb.AddForce(move_thrust * Time.deltaTime * speed, mode);
-                rb.AddTorque(new Vector3(-x, 0, 0));
-                break;
+                    break;
+            }
         }
+        
 
         triggerCall = Mathf.Max(triggerCall - Time.deltaTime, 0f); // update time delay for trigger calls
 
@@ -111,13 +118,15 @@ public class AgentController : MonoBehaviour {
         if (other.gameObject.tag == "Kill" && triggerCall == 0f && !invincible) {
             StartCoroutine("Kill");
             triggerCall = triggerTimeout;
-            gm.numDead += 1;
+            if (gm != null)
+                gm.numDead += 1;
         }
         
         if (other.gameObject.tag == "Goal" && triggerCall == 0f) {
             StartCoroutine("Goal");
             triggerCall = triggerTimeout;
-            gm.numSaved += 1;
+            if (gm != null)
+                gm.numSaved += 1;
         }
     }
 
@@ -169,7 +178,7 @@ public class AgentController : MonoBehaviour {
             yield return null;
         }
         transform.parent = null;
-        gm.UpdateAgentCount();
+        if (gm != null) gm.UpdateAgentCount();
 
         if (this.gameObject != null) Destroy(this.gameObject); /* Destroy agent GameObject after initDelay + killDelay seconds */
     }
@@ -193,7 +202,8 @@ public class AgentController : MonoBehaviour {
             yield return null;
         }
         transform.parent = null;
-        gm.UpdateAgentCount();
+        if (gm != null)
+            gm.UpdateAgentCount();
 
         Destroy(this.gameObject); /* Destroy agent GameObject after initDelay + killDelay seconds */
     }

@@ -7,8 +7,10 @@ public class LevelSelectManager : MonoBehaviour {
     public void LoadLevel(string levelName) {
         SceneManager.LoadScene(levelName);
 
-        GameManager gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        if (gm != null) {
+        GameObject g = GameObject.Find("Game Manager");
+
+        if (g != null) {
+            GameManager gm = g.GetComponent<GameManager>();
             gm.ResumeGame(); // unpause game
         }
     }
