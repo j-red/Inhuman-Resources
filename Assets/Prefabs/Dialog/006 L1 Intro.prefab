@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586533, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: m_Name
-      value: 005 L1 Intro
+      value: 006 L1 Intro
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.size
@@ -101,16 +101,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[0]
-      value: Welcome to another <color=orange>job</color>!
+      value: "Welcome to another \n<color=orange>job</color>!"
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[1]
-      value: Watch out-- your coworkers might decide to linger in the <color=red>break
-        room</color>.
+      value: "Watch out-- your coworkers \nmight decide to linger \nin the <color=red>break
+        room</color>."
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[2]
-      value: Wouldn't that be <color=red>frustrating</color>.
+      value: "Wouldn't that be \n<color=red>frustrating</color>..."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
