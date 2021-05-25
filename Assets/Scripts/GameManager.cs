@@ -207,7 +207,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void PauseGame() {
+    public void PauseGame() {
         Time.timeScale = 0f;
         float pauseGrain = 1f;
         if (postProcessor.profile.TryGet<FilmGrain>(out var grain)) {
@@ -216,7 +216,7 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    void ResumeGame() {
+    public void ResumeGame() {
         Time.timeScale = 1f;
 
         if (postProcessor.profile.TryGet<FilmGrain>(out var grain)) {
