@@ -26,8 +26,11 @@ public class AgentController : MonoBehaviour {
 
     public ForceMode mode;
 
-    [HeaderAttribute ("Sound Effects")] 
-    public GameObject deathPFX;
+    [HeaderAttribute ("Effects")] 
+    public GameObject deathPFX; 
+    public GameObject bumpPfx;
+    [Range(0, 0.01f)]
+    public float bumpChance = 0.001f;
     private AudioSource audioSrc;
     public AudioClip deathSound, bumpSound, rescueSound;
 
@@ -134,6 +137,9 @@ public class AgentController : MonoBehaviour {
         audioSrc.clip = bumpSound;
         audioSrc.priority = 200;
         audioSrc.pitch = Random.Range(0.8f, 2f);
+        if (Random.Range(0, 1f) < bumpChance && bumpPfx != null) {
+            Instantiate(bumpPfx, transform.position, Quaternion.identity);
+        }
         audioSrc.Play();
     }
 

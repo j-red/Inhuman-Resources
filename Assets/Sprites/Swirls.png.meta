@@ -1,0 +1,1272 @@
+fileFormatVersion: 2
+guid: 56c6e3c658e15884cb3095c807abfcf6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1264650697581453023
+    second: Seamless-01_0
+  - first:
+      213: -2508865950471491300
+    second: Seamless-01_1
+  - first:
+      213: -7496883989391038174
+    second: Seamless-01_2
+  - first:
+      213: -5995237347797202901
+    second: Seamless-01_3
+  - first:
+      213: 7408530680996485867
+    second: Seamless-01_4
+  - first:
+      213: 1915373765417649788
+    second: Seamless-01_5
+  - first:
+      213: 1063079717044446620
+    second: Seamless-01_6
+  - first:
+      213: -937988705836522966
+    second: Seamless-01_7
+  - first:
+      213: 8498422300789033019
+    second: Seamless-01_8
+  - first:
+      213: 542981297468467235
+    second: Seamless-01_9
+  - first:
+      213: 1023662355270720316
+    second: Seamless-01_10
+  - first:
+      213: -5671799774468645103
+    second: Seamless-01_11
+  - first:
+      213: 6435545364809711027
+    second: Seamless-01_12
+  - first:
+      213: 1833364012106585803
+    second: Seamless-01_13
+  - first:
+      213: -5121809736307638553
+    second: Seamless-01_14
+  - first:
+      213: -8028365761272364280
+    second: Seamless-01_15
+  - first:
+      213: -6249041824170685867
+    second: Seamless-01_16
+  - first:
+      213: -6926624805355895987
+    second: Seamless-01_17
+  - first:
+      213: 8446045335547420023
+    second: Seamless-01_18
+  - first:
+      213: 1901038576666746886
+    second: Seamless-01_19
+  - first:
+      213: -3310776064016203233
+    second: Seamless-01_20
+  - first:
+      213: 8910490298628874336
+    second: Seamless-01_21
+  - first:
+      213: -8358853201053516498
+    second: Seamless-01_22
+  - first:
+      213: -5152099211926213506
+    second: Seamless-01_23
+  - first:
+      213: 2947155477542391109
+    second: Seamless-01_24
+  - first:
+      213: 8515362536641539174
+    second: Seamless-01_25
+  - first:
+      213: 2376543935225673246
+    second: Seamless-01_26
+  - first:
+      213: 6022781018794087660
+    second: Seamless-01_27
+  - first:
+      213: -3462550414867483956
+    second: Seamless-01_28
+  - first:
+      213: 7214871438563124479
+    second: Seamless-01_29
+  - first:
+      213: 3989378628716002341
+    second: Seamless-01_30
+  - first:
+      213: 6067808112151196388
+    second: Seamless-01_31
+  - first:
+      213: 1083559439728658131
+    second: Seamless-01_32
+  - first:
+      213: 8490391816725465411
+    second: Seamless-01_33
+  - first:
+      213: 3605391468964433395
+    second: Seamless-01_34
+  - first:
+      213: 4779644269075947871
+    second: Seamless-01_35
+  - first:
+      213: -8310941591951773653
+    second: Seamless-01_36
+  - first:
+      213: 8656003616368133700
+    second: Seamless-01_37
+  - first:
+      213: -5378706813723795520
+    second: Seamless-01_38
+  - first:
+      213: 5432195965447979221
+    second: Seamless-01_39
+  - first:
+      213: 8895557237528139026
+    second: Seamless-01_40
+  - first:
+      213: 3009784953126414852
+    second: Seamless-01_41
+  - first:
+      213: 2654815470722189645
+    second: Seamless-01_42
+  - first:
+      213: 7777461392003384085
+    second: Seamless-01_43
+  - first:
+      213: -5579018419131365714
+    second: Seamless-01_44
+  - first:
+      213: -1011360629344033402
+    second: Seamless-01_45
+  - first:
+      213: -6363391285419502961
+    second: Seamless-01_46
+  - first:
+      213: 834693107788206323
+    second: Seamless-01_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Seamless-01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3472.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdeda4aeb11fc8110800000000000000
+      internalID: 1264650697581453023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_1
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 3472.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11f219e5b7be2dd0800000000000000
+      internalID: -2508865950471491300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_2
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 3472.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229a80a5bb7b5f790800000000000000
+      internalID: -7496883989391038174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_3
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 3472.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2884647563accca0800000000000000
+      internalID: -5995237347797202901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_4
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 3472.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bead06cf66360d660800000000000000
+      internalID: 7408530680996485867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_5
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 3472.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7642d3aa46c49a10800000000000000
+      internalID: 1915373765417649788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_6
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 3472.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c956b56ce51d0ce00800000000000000
+      internalID: 1063079717044446620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_7
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 3472.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a222941ed389bf2f0800000000000000
+      internalID: -937988705836522966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2778.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38c9c55e0670f570800000000000000
+      internalID: 8498422300789033019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_9
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 2778.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328e94bfc9e098700800000000000000
+      internalID: 542981297468467235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_10
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 2778.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bd9df0d77c43e00800000000000000
+      internalID: 1023662355270720316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_11
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 2778.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11fd7a5d728b941b0800000000000000
+      internalID: -5671799774468645103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_12
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 2778.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bdf46d8966af4950800000000000000
+      internalID: 6435545364809711027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_13
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 2778.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6199dfada617910800000000000000
+      internalID: 1833364012106585803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_14
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 2778.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eefe3c6e2dabe8b0800000000000000
+      internalID: -5121809736307638553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_15
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 2778.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803c37050e3859090800000000000000
+      internalID: -8028365761272364280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2084.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a4fbbd191f649a0800000000000000
+      internalID: -6249041824170685867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_17
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 2084.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d434a58307fafdf90800000000000000
+      internalID: -6926624805355895987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_18
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 2084.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d162ecb71663570800000000000000
+      internalID: 8446045335547420023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_19
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 2084.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600298a6388d16a10800000000000000
+      internalID: 1901038576666746886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_20
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 2084.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12c27506b2cd02d0800000000000000
+      internalID: -3310776064016203233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_21
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 2084.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060a65087bb68ab70800000000000000
+      internalID: 8910490298628874336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_22
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 2084.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d719dfc436ffb80800000000000000
+      internalID: -8358853201053516498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_23
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 2084.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c619150111088b0800000000000000
+      internalID: -5152099211926213506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1390.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54dc2c8ca4666e820800000000000000
+      internalID: 2947155477542391109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_25
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1390.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c203a5c15ac2670800000000000000
+      internalID: 8515362536641539174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_26
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1390.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e163c3c1e1e2bf020800000000000000
+      internalID: 2376543935225673246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_27
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1390.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4df213d67359350800000000000000
+      internalID: 6022781018794087660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_28
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 1390.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc231f83ebc82ffc0800000000000000
+      internalID: -3462550414867483956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_29
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 1390.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4aaabe85f502460800000000000000
+      internalID: 7214871438563124479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_30
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 1390.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cf627e9be1d5730800000000000000
+      internalID: 3989378628716002341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_31
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 1390.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e27102545f253450800000000000000
+      internalID: 6067808112151196388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 696.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d64c0ac193990f00800000000000000
+      internalID: 1083559439728658131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_33
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 696.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3490ecf8f5ee3d570800000000000000
+      internalID: 8490391816725465411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_34
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 696.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd49d7507ce80230800000000000000
+      internalID: 3605391468964433395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_35
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 696.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51e00b9325b45240800000000000000
+      internalID: 4779644269075947871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_36
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 696.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20f1b6c7aa99ac80800000000000000
+      internalID: -8310941591951773653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_37
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 696.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4468e187d6d402870800000000000000
+      internalID: 8656003616368133700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_38
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 696.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf150986aefa55b0800000000000000
+      internalID: -5378706813723795520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_39
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 696.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d046d61379036b40800000000000000
+      internalID: 5432195965447979221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21515064d2e537b70800000000000000
+      internalID: 8895557237528139026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_41
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 2.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a6a65e777e4c920800000000000000
+      internalID: 3009784953126414852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_42
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 2.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d498b94da9cc7d420800000000000000
+      internalID: 2654815470722189645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_43
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 2.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5134da4ede71feb60800000000000000
+      internalID: 7777461392003384085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_44
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 2.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea640548e485392b0800000000000000
+      internalID: -5579018419131365714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_45
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 2.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6852224bddce6f1f0800000000000000
+      internalID: -1011360629344033402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_46
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 2.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8211c13751b0b7a0800000000000000
+      internalID: -6363391285419502961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless-01_47
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 2.5
+        width: 520.875
+        height: 694.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0de2a85fc659b00800000000000000
+      internalID: 834693107788206323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: adaa0c61a19d33549af07ae3a1b46a5b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
