@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour {
     private GameManager gm;
     private AudioSource audioSrc;
     public float delayTime = 0.005f;
-    private float interactDelayTime;
+    public float interactDelayTime = 0.001f;
     private GameObject continueText;
     private Animator continueAnimator;
 
@@ -35,7 +35,7 @@ public class DialogueManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Awake() {
-        interactDelayTime = delayTime / 4f;
+        // interactDelayTime = delayTime / 4f;
         sentences = new Queue<string>();
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         audioSrc = GetComponent<AudioSource>();
