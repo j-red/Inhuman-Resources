@@ -101,16 +101,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[0]
-      value: "Watch out-- your coworkers \nmight decide to linger \nin the <b>break
-        room</b>."
+      value: "Let's get to work!       \nFor this room, I need you \nto get everyone
+        to the exit\non the right."
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[1]
-      value: "Wouldn't that be \n<color=red>frustrating</color>..."
+      value: "But watch out\u2014 your \ncoworkers might try to \nlinger in the <b>break
+        room</b>.\nHow <color=red>inconsiderate</color>..."
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[2]
-      value: 
+      value: "Wouldn't that be \n<color=red>frustrating</color>..."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}

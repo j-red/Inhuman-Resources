@@ -101,8 +101,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
       propertyPath: sdialogue.sentences.Array.data[0]
-      value: ... It appears you've performed sufficiently. Press <color=#6D2EFF>'Enter'</color>
-        to move to the next room.
+      value: "It appears you've \nperformed sufficiently. \nPress <color=#6D2EFF>'Enter'</color>
+        to move to \nthe next room."
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
       propertyPath: sdialogue.sentences.Array.data[1]

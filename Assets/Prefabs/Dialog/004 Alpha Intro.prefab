@@ -452,11 +452,13 @@ MonoBehaviour:
   pitchModulation: 0.2
   sdialogue:
     sentences:
-    - "It looks like your coworkers \nmust have turned on the \n<color=red>exhaust
-      fan</color>... Think you can get them across?\n"
+    - "It looks like your \ncoworkers must have \nturned on the <color=red>exhaust
+      \nfan</color>... Think you can \nget them across?\n"
     - "You may need to\nfind a way to move that \n<color=red>grate</color>..."
-    - I don't want to worry you, but the machinery has been unattended for a while
-      now.
+    - "Also, I don't want to worry \nyou, but the machinery \nhas been unattended
+      \nfor quite some time now."
+    - "Just be careful! We don't\nwant you to violate any \nof the <b>DOOM-Approved
+      \nSafety Procedures</b> on your first day!"
 --- !u!82 &3816047415542586534
 AudioSource:
   m_ObjectHideFlags: 0

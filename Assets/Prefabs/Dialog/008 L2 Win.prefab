@@ -97,16 +97,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[0]
-      value: Congratulations, human. You've completed the day's allotted tasks.
+      value: "Congratulations, human! \nYou've completed your \nallotted tasks for
+        \nthe day!"
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[1]
-      value: 'Press <color=#6D2EFF>''Enter''</color>, and go smell dirt, or replenish
-        your fluids, or whatever you do to prepare for your next day of work. '
+      value: "Press <color=#6D2EFF>'Enter'</color>, and go \nsniff some dirt, or
+        \nreplenish your fluids, or \nwhatever it is you \nhumans do."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
+      propertyPath: sdialogue.sentences.Array.data[2]
+      value: "Come back tomorrow \nwhen you're ready for\nyour <b>next big day</b>."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
+      propertyPath: sdialogue.sentences.Array.data[3]
+      value: See you soon!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
