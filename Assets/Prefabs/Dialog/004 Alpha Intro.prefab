@@ -439,6 +439,7 @@ MonoBehaviour:
   dialogueText: {fileID: 3816047414297598088}
   dialogueActive: 0
   delayTime: 0.025
+  interactDelayTime: 0.001
   next: {fileID: 8300000, guid: d9d932583660cb84e8c6c056c8f6a5e1, type: 3}
   speech: {fileID: 0}
   intro: {fileID: 0}
@@ -451,16 +452,11 @@ MonoBehaviour:
   pitchModulation: 0.2
   sdialogue:
     sentences:
-    - "Hello and WELCOME to\nyour first day in the \n<b>Department of Organic \nManpower</b>!"
-    - "Here, your job is to help\nus coordinate the vast\nquantities of workers\nperforming
-      their \n<b>amazing jobs</b>!"
-    - "Let's get started. You can\ninstruct the workers to \nmove left or right using
-      \nthe <b>A</b> and <b>D</b> keys. \nIt's easy!"
-    - "It looks like the workers \nmust have turned on the \n<color=red>exhaust fan</color>...
-      Think you can get them across?\n"
-    - "They need to reach the \n<color=#56D34A>goal zone</color> on the right.    
-      \nThough you may need to\nfind a way to move that \n<color=red>grate</color>..."
-    - "Move quickly.           \nYou <color=red>don't</color> want \nto keep me waiting!"
+    - "It looks like your coworkers \nmust have turned on the \n<color=red>exhaust
+      fan</color>... Think you can get them across?\n"
+    - "You may need to\nfind a way to move that \n<color=red>grate</color>..."
+    - I don't want to worry you, but the machinery has been unattended for a while
+      now.
 --- !u!82 &3816047415542586534
 AudioSource:
   m_ObjectHideFlags: 0

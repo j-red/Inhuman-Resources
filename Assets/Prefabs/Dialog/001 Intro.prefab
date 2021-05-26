@@ -571,6 +571,7 @@ MonoBehaviour:
   dialogueText: {fileID: 3816047414297598088}
   dialogueActive: 0
   delayTime: 0.025
+  interactDelayTime: 0.001
   next: {fileID: 8300000, guid: d9d932583660cb84e8c6c056c8f6a5e1, type: 3}
   speech: {fileID: 0}
   intro: {fileID: 0}
@@ -583,13 +584,14 @@ MonoBehaviour:
   pitchModulation: 0.2
   sdialogue:
     sentences:
-    - "Congratulations, human, \non your selection for\nthis worthwhile and \nhighly\r
-      enjoyable <color=red>job</color>!"
-    - "Look, your fellow human \nworkers aren't going to \ntheir next job. They need\r   
-      \n<color=orange>instructions</color>."
-    - "Get them to the \n<color=#56D34A>goal zone</color> and await \nfurther instruction."
-    - "Move quickly.           \nYou <color=red>don't</color> want \nto disappoint\r
-      me."
+    - "Hello and WELCOME to\nyour first day in the \n<b>Department of Organic \nManpower</b>!"
+    - "Here, your role is to help\nus coordinate the vast\nquantities of workers\nperforming
+      their \n<b>amazing jobs</b>!"
+    - "Let's get started. You can\ninstruct the workers to \nmove left or right using
+      \nthe <b>A</b> and <b>D</b> keys. \nIt's easy!"
+    - "They need to reach the \n<color=#56D34A>goal zone</color> on the left.\nThey'll
+      need to move that inconvenient wall.     "
+    - "Move quickly.           \nYou <color=red>don't</color> want \nto keep me waiting!"
 --- !u!82 &3816047415542586534
 AudioSource:
   m_ObjectHideFlags: 0
