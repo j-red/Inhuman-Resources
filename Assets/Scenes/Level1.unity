@@ -2543,6 +2543,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 484820039068544467, guid: 57ace793e6f846249bcd4549b1c37613, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 456183502}
+    - target: {fileID: 484820039068544467, guid: 57ace793e6f846249bcd4549b1c37613, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetActiveScene
+      objectReference: {fileID: 0}
     - target: {fileID: 484820039844927460, guid: 57ace793e6f846249bcd4549b1c37613, type: 3}
       propertyPath: m_Pivot.x
       value: 0
