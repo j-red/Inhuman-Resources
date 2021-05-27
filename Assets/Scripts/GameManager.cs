@@ -225,7 +225,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Win() {
-        print("You won!");
+        // print("You won!");
         hasWon = true;
 
         dialogTrigger.Win();
