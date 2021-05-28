@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!64 &8043359371235802131
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3070908056839223194}
+  m_Material: {fileID: 13400000, guid: b6724fdc42abc2542ac16bf3a885c3f1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4812277110878975991, guid: 92b9e7518e26710449de6415456e2a85, type: 3}
+--- !u!1001 &7119021063182900895
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4961172782903158744, guid: 7807a66c4a0eea54190ebe4b12e52ede, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961172782903158744, guid: 7807a66c4a0eea54190ebe4b12e52ede, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.969959
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961172782903158744, guid: 7807a66c4a0eea54190ebe4b12e52ede, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.9106786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961172782903158744, guid: 7807a66c4a0eea54190ebe4b12e52ede, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9712863
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961172782903158744, guid: 7807a66c4a0eea54190ebe4b12e52ede, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5212311198044989701, guid: 7807a66c4a0eea54190ebe4b12e52ede, type: 3}
+      propertyPath: m_Name
+      value: Pipe_Cross
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7807a66c4a0eea54190ebe4b12e52ede, type: 3}
+--- !u!1 &3070908056839223194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5212311198044989701, guid: 7807a66c4a0eea54190ebe4b12e52ede, type: 3}
+  m_PrefabInstance: {fileID: 7119021063182900895}
+  m_PrefabAsset: {fileID: 0}

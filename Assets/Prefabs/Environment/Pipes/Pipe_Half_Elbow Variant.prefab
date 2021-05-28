@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!64 &1802176749405724548
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251217845625545257}
+  m_Material: {fileID: 13400000, guid: b6724fdc42abc2542ac16bf3a885c3f1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6321408025918769447, guid: 92b9e7518e26710449de6415456e2a85, type: 3}
+--- !u!1001 &8863780384641184669
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4232371633189267463, guid: 88663bd81c068814695af0112ab07d3d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232371633189267463, guid: 88663bd81c068814695af0112ab07d3d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9699593
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232371633189267463, guid: 88663bd81c068814695af0112ab07d3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.9106786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232371633189267463, guid: 88663bd81c068814695af0112ab07d3d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9712863
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664916887372763572, guid: 88663bd81c068814695af0112ab07d3d, type: 3}
+      propertyPath: m_Name
+      value: Pipe_Half_Elbow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88663bd81c068814695af0112ab07d3d, type: 3}
+--- !u!1 &1251217845625545257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7664916887372763572, guid: 88663bd81c068814695af0112ab07d3d, type: 3}
+  m_PrefabInstance: {fileID: 8863780384641184669}
+  m_PrefabAsset: {fileID: 0}

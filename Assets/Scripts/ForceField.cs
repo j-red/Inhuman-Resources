@@ -9,9 +9,17 @@ public class ForceField : MonoBehaviour {
     private float scalar = 100f;
     public Vector3 thrustDirection = new Vector3(0, 1f, 0); // default is up (green Y-axis)
     public static bool debug = false;
+    public bool forceDebug = false;
+
+    void Start() {
+        
+    }
 
     // Update is called once per frame
     void Update() {
+        if (debug) forceDebug = true;
+        debug = forceDebug;
+
         if (thrustDirection.magnitude > 1f)
             thrustDirection = thrustDirection.normalized;
     }
@@ -21,7 +29,7 @@ public class ForceField : MonoBehaviour {
             float q = 1f;
             Color color = new Color(q, q, 1.0f);
             // Debug.DrawLine(transform.position, transform.position + thrustDirection, color);
-            Debug.DrawLine(transform.position, transform.position + (transform.forward * thrust / 2f), color);
+            Debug.DrawLine(transform.position, transform.position + (transform.forward * thrust / 2f), color, 0f, true);
         }
     }
 

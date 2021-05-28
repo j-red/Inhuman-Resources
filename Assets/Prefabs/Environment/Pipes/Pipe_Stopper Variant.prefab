@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1452469268226923692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4093850871502037288, guid: 6fd72b85e1df5494f9cfdd94998d981a, type: 3}
+      propertyPath: m_Name
+      value: Pipe_Stopper Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987301196107860798, guid: 6fd72b85e1df5494f9cfdd94998d981a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987301196107860798, guid: 6fd72b85e1df5494f9cfdd94998d981a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.96996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987301196107860798, guid: 6fd72b85e1df5494f9cfdd94998d981a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.9106786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987301196107860798, guid: 6fd72b85e1df5494f9cfdd94998d981a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9712863
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fd72b85e1df5494f9cfdd94998d981a, type: 3}
