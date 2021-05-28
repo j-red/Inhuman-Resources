@@ -8,14 +8,7 @@ public class ForceField : MonoBehaviour {
     [SerializeField]
     private float scalar = 100f;
     public Vector3 thrustDirection = new Vector3(0, 1f, 0); // default is up (green Y-axis)
-
     public static bool debug = false;
-    
-
-    // Start is called before the first frame update
-    void Start() {
-        
-    }
 
     // Update is called once per frame
     void Update() {

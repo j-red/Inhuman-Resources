@@ -10,11 +10,10 @@ public static class BezierCurve {
     public static void GetBezierCurve(Vector3 A, Vector3 B, Vector3 C, Vector3 D, List<Vector3> allRopeSections) {
         // The resolution of the line
         // Make sure the resolution is adding up to 1, so 0.3 will give a gap at the end, but 0.2 will work
-        float resolution = 0.05f; // default 0.1f
+        float resolution = 1f; // default 0.1f
 
         // Clear the list
         allRopeSections.Clear();
-
 
         float t = 0;
 
