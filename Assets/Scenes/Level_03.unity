@@ -3628,7 +3628,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.020213017, z: 0.047307067}
+  m_ConnectedAnchor: {x: -5.67, y: 6.76, z: 0}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -9742,7 +9742,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.26219591, y: 0.13132729, z: 0.03573835}
+  m_ConnectedAnchor: {x: 4.901, y: 5.953, z: 18.29}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -12043,7 +12043,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.26219591, y: 0.05447481, z: 0.058918796}
+  m_ConnectedAnchor: {x: -0.46, y: 7.57, z: 18.29}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -13652,7 +13652,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.2622389, y: -0.036412105, z: 0.09461414}
+  m_ConnectedAnchor: {x: -6.8, y: 10.06, z: 18.293}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -15062,6 +15062,63 @@ PrefabInstance:
       objectReference: {fileID: 1344793589}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a702eec262432cf4f8c3d4eb95bfcc21, type: 3}
+--- !u!1001 &4890817174332044645
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799354, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890817174455799355, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
+      propertyPath: m_Name
+      value: Custom Cursor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 451ccc12baf800d42b5d4173c086c38b, type: 3}
 --- !u!1001 &5790333936159204870
 PrefabInstance:
   m_ObjectHideFlags: 0
