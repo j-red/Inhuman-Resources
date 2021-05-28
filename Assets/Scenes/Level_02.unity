@@ -3292,6 +3292,7 @@ GameObject:
   - component: {fileID: 625431980}
   - component: {fileID: 625431983}
   - component: {fileID: 625431985}
+  - component: {fileID: 625431984}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3364,7 +3365,7 @@ Transform:
   - {fileID: 48137891}
   - {fileID: 1979553836}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &625431983
 MonoBehaviour:
@@ -3398,6 +3399,25 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &625431984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625431979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7bd434a78cb204498f013722ce0594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: {x: 0.25, y: 0.25, z: 0.1}
+  swayTime: 2
+  interpFac: 0.0025
+  camSway: {x: 0, y: 0, z: 0}
+  canSway: 1
+  isSwaying: 0
+  forceSway: 0
 --- !u!114 &625431985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7550,7 +7570,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3427388056288078290, guid: dc73028e81554b34f9aa02cf576b391c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3427388056288078290, guid: dc73028e81554b34f9aa02cf576b391c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12834,7 +12854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6325437811149274527, guid: 6abb6fc5ab8defc45b05ff5e86f7911b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6325437811149274527, guid: 6abb6fc5ab8defc45b05ff5e86f7911b, type: 3}
       propertyPath: m_LocalPosition.x

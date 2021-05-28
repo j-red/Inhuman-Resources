@@ -8943,6 +8943,10 @@ MonoBehaviour:
   delta: {x: 0.25, y: 0.25, z: 0.1}
   swayTime: 2
   interpFac: 0.0025
+  camSway: {x: 0, y: 0, z: 0}
+  canSway: 1
+  isSwaying: 0
+  forceSway: 1
 --- !u!1001 &1947199452
 PrefabInstance:
   m_ObjectHideFlags: 0
