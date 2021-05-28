@@ -36,8 +36,11 @@ public class AgentController : MonoBehaviour {
 
     [HeaderAttribute ("Debug"), Range(1f, 10f), SerializeField]
     private bool debugMode = false;
-    public bool invincible = false;
-    public bool noControl = false;
+    public static bool drawAgentVelocity;
+    public bool drawVelocity = false, invincible = false, noControl = false;
+    
+    [Range(0, 10f)]
+    public float noControlTimer = 0f;
     private float triggerTimeout = 0.3f, triggerCall = 0f;
 
     [HeaderAttribute ("Camera Shake")] 
@@ -58,16 +61,17 @@ public class AgentController : MonoBehaviour {
         }
         audioSrc = GetComponent<AudioSource>();
         cs = Camera.main.gameObject.GetComponent<CameraShake>();
+        drawAgentVelocity = drawVelocity;
     }
 
     // Update is called once per frame
     void Update() {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-
         float movement = x * speed;
         
-        if (!noControl) {
+        noControlTimer = Mathf.Max(noControlTimer - Time.deltaTime, 0f);
+        if (!noControl || noControlTimer > 0) {
             switch (agentMoveType) { // RB2D alternatives commented out
                 case AgentMoveType.Velocity:
                     // rb.velocity = new Vector2(movement, rb.velocity.y - grav); // A: update velocity directly -- works well for horizontal movement, but not for airborne/vertical
@@ -101,7 +105,6 @@ public class AgentController : MonoBehaviour {
             }
         }
         
-
         triggerCall = Mathf.Max(triggerCall - Time.deltaTime, 0f); // update time delay for trigger calls
 
         if (debugMode && Input.GetButtonDown("Debug Reset")) {
@@ -114,22 +117,51 @@ public class AgentController : MonoBehaviour {
         /* Physics loop -- runs 50x per second. */
         float x = Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed);  // clamp agent horizontal velocity
         rb.velocity = new Vector3(x, rb.velocity.y, rb.velocity.z);
+
+        if (drawAgentVelocity) {
+            Debug.DrawLine(transform.position, transform.position + rb.velocity, Color.green);
+        }
+
+        if (drawVelocity != drawAgentVelocity) drawAgentVelocity = drawVelocity;
     }
 
     private void OnTriggerEnter(Collider other) {
-        /* Destroy Agent if they come into contact with a 'Kill Zone' */
-        if (other.gameObject.tag == "Kill" && triggerCall == 0f && !invincible) {
-            StartCoroutine("Kill");
-            triggerCall = triggerTimeout;
-            if (gm != null)
-                gm.numDead += 1;
-        }
-        
-        if (other.gameObject.tag == "Goal" && triggerCall == 0f) {
-            StartCoroutine("Goal");
-            triggerCall = triggerTimeout;
-            if (gm != null)
-                gm.numSaved += 1;
+        if (triggerCall == 0f) {
+            /* These cases only met if the trigger delay is not currently in use. */
+
+            switch (other.gameObject.tag) {
+                case "Kill": /* Destroy Agent if they come into contact with a 'Kill Zone' */
+                    if (!invincible) {
+                        StartCoroutine("Kill");
+                        triggerCall = triggerTimeout;
+                        if (gm != null) gm.numDead += 1;
+                    }
+                    break;
+                case "Goal": /* Rescue Agent if they come into contact with a 'Goal Zone' */
+                    if (!invincible) {
+                        StartCoroutine("Goal");
+                        triggerCall = triggerTimeout;
+                        if (gm != null) gm.numDead += 1;
+                    }
+                    break;
+                case "AgentPipe":
+                    triggerCall = 1f; // wait one second after leaving pipe before allowing agent to re-enter any trigger based events
+                    EnvironmentPipe pipe = other.gameObject.transform.parent.gameObject.GetComponent<EnvironmentPipe>();
+                    EnvironmentPipe otherPipe = pipe.partner.gameObject.GetComponent<EnvironmentPipe>();
+                    this.transform.position = pipe.egress;
+                    
+                    rb.velocity = otherPipe.transform.forward * otherPipe.thrust;
+
+                    noControlTimer += 1.0f; // prevent player from controlling this agent for this long
+                    
+                    break;
+                default:
+                    break;
+            }
+
+        } else {
+            /* This code block reached if trigger delay currently > 0, but a collider still hit.
+                This might happen if the secondary collider on an agent hit something extra. */
         }
     }
 

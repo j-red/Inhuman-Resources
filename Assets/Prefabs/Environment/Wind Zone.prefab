@@ -60,7 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 25
-  scalar: 1000
+  scalar: 1
+  thrustDirection: {x: 0, y: 1, z: 0}
+  dir: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &537666817198172109
 AudioSource:
   m_ObjectHideFlags: 0
