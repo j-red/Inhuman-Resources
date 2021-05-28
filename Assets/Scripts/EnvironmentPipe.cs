@@ -14,14 +14,10 @@ public class EnvironmentPipe : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        egress = partner.transform.Find("Egress").transform.position;
+        if (partner != null)
+            egress = partner.transform.Find("Egress").transform.position;
     }
-
-    // Update is called once per frame
-    void Update() {
-
-    }
-
+    
     private void FixedUpdate() {
         if (debug) {
             Debug.DrawLine(transform.position, transform.position + (transform.forward * thrust), Color.red);
