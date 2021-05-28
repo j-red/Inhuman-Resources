@@ -1084,7 +1084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2598872517921313661, guid: a702eec262432cf4f8c3d4eb95bfcc21, type: 3}
       propertyPath: m_Name
-      value: Entrance Pipe (1)
+      value: Spawn Pipe
       objectReference: {fileID: 0}
     - target: {fileID: 3412281996276779463, guid: a702eec262432cf4f8c3d4eb95bfcc21, type: 3}
       propertyPath: m_RootOrder
@@ -3386,7 +3386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ca05c04a72a1649b6a2f3b0dd56df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introText: {fileID: 3816047415542586533, guid: e723ec0f8d750dc4bba4a01d445b4e55, type: 3}
+  introText: {fileID: 5053857458628252332, guid: c723cf183163c2f4fa79ee031f427b9b, type: 3}
   loseText: {fileID: 3816047415542586533, guid: 5c27ba26fc57fe345a1d696a85370034, type: 3}
   winText: {fileID: 7916525423309787836, guid: 649c76a88657f364d993ca2e04253729, type: 3}
 --- !u!1001 &558368690
@@ -4621,8 +4621,8 @@ Transform:
   - {fileID: 937857464}
   - {fileID: 1596500535}
   - {fileID: 1804317703}
-  - {fileID: 954500312}
   - {fileID: 797701225}
+  - {fileID: 954500312}
   - {fileID: 1774751705}
   - {fileID: 1332760110}
   - {fileID: 1899130458}
@@ -5209,7 +5209,7 @@ Transform:
   m_LocalScale: {x: 0.20183682, y: 9.877548, z: 0.06815261}
   m_Children: []
   m_Father: {fileID: 696343961}
-  m_RootOrder: 68
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: -0.013, y: -0.004, z: -359.94}
 --- !u!33 &797701226
 MeshFilter:
@@ -6327,7 +6327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 579030932155572498, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
       propertyPath: count
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 579030932155572498, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
       propertyPath: instant
