@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 647b4e2a8c596b44283bfeb4a075b32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeToBlack: {fileID: 8410357781145682884, guid: b8b16940e92406049b650f7600e26892, type: 3}
 --- !u!82 &4683791507068379691
 AudioSource:
   m_ObjectHideFlags: 0

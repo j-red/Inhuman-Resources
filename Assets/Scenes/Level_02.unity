@@ -1097,6 +1097,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6850879239496830748, guid: 57c134b53adabac4dbbbe3b069069bc6, type: 3}
+      propertyPath: thrust
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6850879239496830749, guid: 57c134b53adabac4dbbbe3b069069bc6, type: 3}
       propertyPath: m_Name
       value: Wind Zone (1)

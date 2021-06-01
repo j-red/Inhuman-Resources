@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[0]
       value: "<color=#FD5DA8>Incredible!</color> You \nlearn quickly! We will \nexpect
-        this level of\nproductivity in the future."
+        this level of\nproductivity in the \nfuture."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}

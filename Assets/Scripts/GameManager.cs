@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour {
         /* Eventually, this should contain the logic for moving to the next scene.
            For now, this simply instantiates a 'Fade to Black' UI Prefab. */
         Instantiate(FadeToBlack, GameObject.Find("Canvas").transform);
-        Invoke("LoadMainMenu", 5f);
+        Invoke("LoadMainMenu", 2.5f);
     }
 
     public void LoadMainMenu() {

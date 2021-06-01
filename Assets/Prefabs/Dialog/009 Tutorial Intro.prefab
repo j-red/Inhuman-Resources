@@ -112,7 +112,7 @@ PrefabInstance:
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[3]
       value: "There may be <color=orange>obstacles</color>\nalong the way. Use the
-        \n<color=orange>SCROLL WHEEL</color> if you get stuck. "
+        \n<color=orange>SCROLL WHEEL</color> if you \nget stuck. "
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 108227fd8567a9646ba5a7f93d1f6ea3, type: 3}
       propertyPath: sdialogue.sentences.Array.data[4]
