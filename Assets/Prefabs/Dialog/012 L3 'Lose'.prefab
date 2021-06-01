@@ -101,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[0]
-      value: "Excellent job!                \n<color=#FFD700>Gold star</color> for
+      value: "Excellent job!                \n<color=orange>Gold star</color> for
         you!"
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
@@ -117,7 +117,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[3]
-      value: "See you back here in 15 \nminutes!\nDon't be late, <color=red>or else</color>!"
+      value: "See you back here \nin 15 minutes!\nDon't be late, \n<color=red>or
+        else</color>!"
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[4]
