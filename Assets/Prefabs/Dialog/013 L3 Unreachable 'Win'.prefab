@@ -93,33 +93,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586533, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: m_Name
-      value: 011 L3 Intro
+      value: 013 L3 Unreachable 'Win'
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.size
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[0]
-      value: "Oh.              \n\nYou weren't supposed \nto see this."
+      value: "Oh, great, now look what \nyou've done. You've gone and\ngiven them
+        <b>hope</b>.    \nWe can't have that."
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[1]
-      value: '...      '
+      value: "Such a shame...     \nI was starting to like you.   \n\nOh well. <color=red>Goodbye</color>!"
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[2]
-      value: '..........     '
+      value: 'See you back here in 15 minutes!
+
+        Don''t be late, <color=red>or
+        else</color>!'
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[3]
-      value: "You know what? Let's\njust dump this batch.                           
-        \n\nThere's more in the\nother rooms."
+      value: 'See you back here in 15 minutes!
+
+        Don''t be late, <color=red>or
+        else</color>!'
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[4]
-      value: "So far, you have proven \nyourself to be an \n<color=orange>exemplary</color>
-        employee! \nSo keep it up for just a \nlittle longer. "
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}

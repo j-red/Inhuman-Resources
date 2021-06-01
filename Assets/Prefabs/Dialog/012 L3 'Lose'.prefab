@@ -93,33 +93,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586533, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: m_Name
-      value: 011 L3 Intro
+      value: 012 L3 'Lose'
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[0]
-      value: "Oh.              \n\nYou weren't supposed \nto see this."
+      value: "Excellent job!                \n<color=#FFD700>Gold star</color> for
+        you!"
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[1]
-      value: '...      '
+      value: 'I think you deserve
+
+        a <b>break</b>.'
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[2]
-      value: '..........     '
+      value: "Go on, I mean it! \nWhy don't you hit <color=#5946B2>Escape</color>\nand
+        head on back to the \n<color=red>break room</color>?"
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[3]
-      value: "You know what? Let's\njust dump this batch.                           
-        \n\nThere's more in the\nother rooms."
+      value: "See you back here in 15 \nminutes!\nDon't be late, <color=red>or else</color>!"
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[4]
-      value: "So far, you have proven \nyourself to be an \n<color=orange>exemplary</color>
-        employee! \nSo keep it up for just a \nlittle longer. "
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}

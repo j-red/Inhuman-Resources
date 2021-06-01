@@ -20,20 +20,18 @@ public class PopulateAgentDisplay : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        indicators = new GameObject[numAgents];
-        startPos += new Vector2(transform.position.x, transform.position.y);
-        Vector3 pos = new Vector3(startPos.x, startPos.y);
-
-        for (int j = 0; j < height; j ++) {
-            for (int i = 0; i < width; i ++) {
-                indicators[j * width + i] = Instantiate(agentIndicator, pos, Quaternion.identity, this.transform);
-                
-                // print("Instantiate at " + pos);
-                pos.x += dx;
-            }
-            pos.x = startPos.x;
-            pos.y -= dy;
-        }
+        /* Commented this out when switching from icons to numerical values in agent indicator */
+        // indicators = new GameObject[numAgents];
+        // startPos += new Vector2(transform.position.x, transform.position.y);
+        // Vector3 pos = new Vector3(startPos.x, startPos.y);
+        // for (int j = 0; j < height; j ++) {
+        //     for (int i = 0; i < width; i ++) {
+        //         indicators[j * width + i] = Instantiate(agentIndicator, pos, Quaternion.identity, this.transform);
+        //         pos.x += dx;
+        //     }
+        //     pos.x = startPos.x;
+        //     pos.y -= dy;
+        // }
     }
 
     // public void UpdateAgentColors(int numActive, int numInactive, int numDead) {

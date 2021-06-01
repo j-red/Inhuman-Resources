@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
     public bool isPaused = false;
     public GameObject pauseMenu;
     private Vector3 mouseStart, mouseDelta;
-    private PopulateAgentDisplay agentDisp;
+    // private PopulateAgentDisplay agentDisp;
     private AudioSource bgAudio;
     public bool hasWon = false;
     public bool hasLost = false;
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour {
 
         agentContainer = GameObject.Find("Agent Container");
         agentCounter = GameObject.Find("Agent Counter").GetComponent<Text>();
-        agentDisp = GameObject.Find("Agent Display").GetComponent<PopulateAgentDisplay>();
+        // agentDisp = GameObject.Find("Agent Display").GetComponent<PopulateAgentDisplay>();
         bgAudio = GameObject.Find("Background Music").GetComponent<AudioSource>();
         postProcessor = GameObject.Find("Post Processing Volume").GetComponent<Volume>();
 
@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour {
         agentCounter.text = counterText + numSaved.ToString(formatString) + "/" + numToWin.ToString(formatString); // convert number of agents to string with leading zeroes
 
         // agentDisp.UpdateAgentColors(numAgents, maxCt - numAgents - 2, 1); // num active, inactive, dead
-        agentDisp.UpdateAgentColors(numAgents, numSaved); // num active
+        // agentDisp.UpdateAgentColors(numAgents, numSaved); // this used to add icons for each of the agents
     }
 
     void LateUpdate() {
