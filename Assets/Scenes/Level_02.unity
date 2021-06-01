@@ -2944,7 +2944,7 @@ MonoBehaviour:
   numDead: 0
   numSaved: 0
   maxCt: 100
-  numToWin: 36
+  numToWin: 50
   counterText: 'Agents Recovered: '
   goldTime: 30
   silverTime: 60
@@ -11658,7 +11658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7731253888727097236, guid: 989040f714d7bd1489cc661a7a23cf84, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7731253888727097236, guid: 989040f714d7bd1489cc661a7a23cf84, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13012,7 +13012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7731253888727097236, guid: 989040f714d7bd1489cc661a7a23cf84, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2824316
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7731253888727097236, guid: 989040f714d7bd1489cc661a7a23cf84, type: 3}
       propertyPath: m_LocalRotation.w
