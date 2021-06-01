@@ -34,7 +34,7 @@ public class AgentController : MonoBehaviour {
     private AudioSource audioSrc;
     public AudioClip deathSound, bumpSound, rescueSound;
 
-    [HeaderAttribute ("Debug"), Range(1f, 10f), SerializeField]
+    [HeaderAttribute ("Debug"), SerializeField]
     private bool debugMode = false;
     public static bool drawAgentVelocity;
     public bool drawVelocity = false, invincible = false, noControl = false;
@@ -138,11 +138,9 @@ public class AgentController : MonoBehaviour {
                     }
                     break;
                 case "Goal": /* Rescue Agent if they come into contact with a 'Goal Zone' */
-                    if (!invincible) {
-                        StartCoroutine("Goal");
-                        triggerCall = triggerTimeout;
-                        if (gm != null) gm.numDead += 1;
-                    }
+                    StartCoroutine("Goal");
+                    triggerCall = triggerTimeout;
+                    if (gm != null) gm.numSaved += 1;
                     break;
                 case "AgentPipe":
                     triggerCall = 1f; // wait one second after leaving pipe before allowing agent to re-enter any trigger based events

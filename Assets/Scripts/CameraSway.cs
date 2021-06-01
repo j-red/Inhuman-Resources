@@ -75,7 +75,7 @@ public class CameraSway : MonoBehaviour {
             );
 
         for (float i = 0; i < swayTime; i += Time.deltaTime) {
-            transform.position = Vector3.Slerp(transform.position, targetPos, interpFac);
+            if (Time.timeScale != 0) transform.position = Vector3.Slerp(transform.position, targetPos, interpFac);
             yield return null;
         }
 
