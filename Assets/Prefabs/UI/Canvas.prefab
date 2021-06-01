@@ -1391,6 +1391,7 @@ GameObject:
   - component: {fileID: 6501731053599961532}
   - component: {fileID: 6591324036061094266}
   - component: {fileID: 2632063708240189115}
+  - component: {fileID: 8561392714182465156}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1528,6 +1529,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &8561392714182465156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213897614002829212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9edfc1d954b0efb49b37a01d946719e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentDisplayToggle: 1
 --- !u!1001 &8503221242406286443
 PrefabInstance:
   m_ObjectHideFlags: 0
