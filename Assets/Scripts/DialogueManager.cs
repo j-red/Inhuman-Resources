@@ -61,15 +61,6 @@ public class DialogueManager : MonoBehaviour {
 
         if (Input.GetButtonDown(interactBtn) && !gm.isPaused) {
             wasTypingWhenBtnPressed = isTyping;
-            // if (!isTyping) {
-            //     DisplayNextSentence();
-            //     if (next != null) {
-            //         audioSrc.clip = next;
-            //         audioSrc.volume = vols[0];
-            //         audioSrc.pitch = 1f;
-            //         audioSrc.Play();
-            //     }
-            // }
         }
 
         if (dialogueActive && Input.GetButtonUp(interactBtn) && !gm.isPaused) {
@@ -182,14 +173,10 @@ public class DialogueManager : MonoBehaviour {
         dialogueActive = false;
 
         Destroy(GetComponent<Image>());
+        if (continueAnimator != null) {
+            continueAnimator.SetTrigger("Done");
+        }
 
-        // if (end != null) {
-        //     audioSrc.clip = next;
-        //     audioSrc.volume = vols[3];
-        //     audioSrc.pitch = 1f;
-        //     audioSrc.Play();
-        // }
-
-        Destroy(this.gameObject, 1); // destroy after 3 seconds
+        Destroy(this.gameObject, 1); // destroy after 1 second
     }
 }
