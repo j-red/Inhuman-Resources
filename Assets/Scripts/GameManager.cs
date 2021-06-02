@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (!isPaused) {
+        if (!isPaused && !hasWon) {
             gameTime += Time.deltaTime; // increment game time clock whenever unpaused
             string fmat = "D2"; // use 2 leading zeros in timer text
 
@@ -259,7 +259,26 @@ public class GameManager : MonoBehaviour {
         /* Eventually, this should contain the logic for moving to the next scene.
            For now, this simply instantiates a 'Fade to Black' UI Prefab. */
         Instantiate(FadeToBlack, GameObject.Find("Canvas").transform);
+        StartCoroutine("FadeAudio");
         Invoke("LoadMainMenu", 2f);
+    }
+
+    IEnumerator FadeAudio() {
+        GameObject bg = GameObject.Find("Background Music");
+        AudioSource bgMusic;
+
+        if (bg != null) {
+            bgMusic = bg.GetComponent<AudioSource>();
+        } else {
+            yield break;
+        }
+
+        float initVol = bgMusic.volume;
+
+        for (float i = 0; i < 2f; i += Time.deltaTime) {    
+            bgMusic.volume = Mathf.Lerp(initVol, 0, i);
+            yield return null;
+        }
     }
 
     public void LoadMainMenu() {

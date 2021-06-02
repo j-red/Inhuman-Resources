@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class LevelSelectManager : MonoBehaviour {
     public GameObject fadeToBlack;
     private string toLoad;
-    private static float loadDelay = 2.5f; // wait this many seconds before actually loading into new level
+    private static float loadDelay = 2f; // wait this many seconds before actually loading into new level
 
     public void LoadLevel(string levelName) {
         toLoad = levelName;
 
         if (fadeToBlack != null) {
             Instantiate(fadeToBlack, GameObject.Find("Canvas").transform);
+            StartCoroutine("FadeAudio");
             Invoke("LoadActive", loadDelay);
         } else {
             LoadActive();
@@ -24,6 +25,24 @@ public class LevelSelectManager : MonoBehaviour {
         //     GameManager gm = g.GetComponent<GameManager>();
         //     gm.ResumeGame(); // unpause game
         // }
+    }
+
+    IEnumerator FadeAudio() {
+        GameObject bg = GameObject.Find("Background Music");
+        AudioSource bgMusic;
+
+        if (bg != null) {
+            bgMusic = bg.GetComponent<AudioSource>();
+        } else {
+            yield break;
+        }
+
+        float initVol = bgMusic.volume;
+
+        for (float i = 0; i < loadDelay; i += Time.deltaTime) {    
+            bgMusic.volume = Mathf.Lerp(initVol, 0, i);
+            yield return null;
+        }
     }
 
     private void LoadActive() {
