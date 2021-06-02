@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &8942252511098039559
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5516790042920299394}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 445c26444a320fb47b5ae21afccea4df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3783829896980370505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +26,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6464817977061245897, guid: 9ccd6cb85338bc44ab4715052080094f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464817977061245897, guid: 9ccd6cb85338bc44ab4715052080094f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8650656696700991081, guid: 9ccd6cb85338bc44ab4715052080094f, type: 3}
       propertyPath: m_Name
       value: Agent (Mindless) Variant
@@ -59,5 +86,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8650656697840943045, guid: 9ccd6cb85338bc44ab4715052080094f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 184515526872419899, guid: 4bb559f845e8d1442be993c9d5df7a04, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ccd6cb85338bc44ab4715052080094f, type: 3}
+--- !u!1 &5516790042920299394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8650656697840943051, guid: 9ccd6cb85338bc44ab4715052080094f, type: 3}
+  m_PrefabInstance: {fileID: 3783829896980370505}
+  m_PrefabAsset: {fileID: 0}
