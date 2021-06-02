@@ -11,9 +11,13 @@ public class EnvironmentPipe : MonoBehaviour {
     public float thrust = 5f;
     
     public bool debug = false;
+    private AudioSource audioSrc;
+    public AudioClip sfx;
 
     // Start is called before the first frame update
     void Start() {
+        audioSrc = GetComponent<AudioSource>();
+
         if (partner != null)
             egress = partner.transform.Find("Egress").transform.position;
     }
@@ -22,5 +26,9 @@ public class EnvironmentPipe : MonoBehaviour {
         if (debug) {
             Debug.DrawLine(transform.position, transform.position + (transform.forward * thrust), Color.red);
         }
+    }
+
+    public void PlaySound() {
+        if (sfx != null) audioSrc.PlayOneShot(sfx);
     }
 }

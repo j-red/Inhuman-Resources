@@ -1867,6 +1867,18 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Scale.y
       value: 3.88
       objectReference: {fileID: 0}
+    - target: {fileID: 3293669587947677435, guid: 9a428d62b686dcf4f961dcc20a1c4a75, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293669587947677435, guid: 9a428d62b686dcf4f961dcc20a1c4a75, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293669587947677435, guid: 9a428d62b686dcf4f961dcc20a1c4a75, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a428d62b686dcf4f961dcc20a1c4a75, type: 3}
 --- !u!1001 &249802790
@@ -16552,7 +16564,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.13, y: 8.6, z: 18.29}
+  m_ConnectedAnchor: {x: -1.5600001, y: 8.13, z: 18.29}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -18448,7 +18460,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -9.74, y: 12.510001, z: 18.293}
+  m_ConnectedAnchor: {x: -8.459999, y: 11.370001, z: 18.293}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2

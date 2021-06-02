@@ -145,6 +145,7 @@ public class AgentController : MonoBehaviour {
                 case "AgentPipe":
                     triggerCall = 1f; // wait one second after leaving pipe before allowing agent to re-enter any trigger based events
                     EnvironmentPipe pipe = other.gameObject.transform.parent.gameObject.GetComponent<EnvironmentPipe>();
+                    pipe.PlaySound(); // play sfx for entering pipe
                     EnvironmentPipe otherPipe = pipe.partner.gameObject.GetComponent<EnvironmentPipe>();
                     this.transform.position = pipe.egress;
                     
