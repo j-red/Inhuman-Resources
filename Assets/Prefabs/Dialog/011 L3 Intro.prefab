@@ -119,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 3816047415542586535, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}
       propertyPath: sdialogue.sentences.Array.data[4]
       value: "So far, you have proven \nyourself to be an \n<color=orange>exemplary</color>
-        employee! \nSo keep it up for just a \nlittle longer. "
+        employee!             \nSo keep it up for just a \nlittle longer. "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ca7eb6a55bf044392f545ea14eb79c, type: 3}

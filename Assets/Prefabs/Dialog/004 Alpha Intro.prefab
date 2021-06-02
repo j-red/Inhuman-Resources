@@ -440,10 +440,13 @@ MonoBehaviour:
   dialogueActive: 0
   delayTime: 0.025
   interactDelayTime: 0.001
+  speechFX:
+  - {fileID: 8300000, guid: ea3e730f7b576934594a437be4570405, type: 3}
+  - {fileID: 8300000, guid: 4f3557a136f81b44d893f678a07f548b, type: 3}
+  - {fileID: 8300000, guid: 8b69aa93105bc334eb47924ebfa93bea, type: 3}
+  - {fileID: 8300000, guid: b42d5111ec2d7ce43a5430b4b5669692, type: 3}
+  - {fileID: 8300000, guid: 06cd43e9d71fb984caaeed8bfffcc5d5, type: 3}
   next: {fileID: 8300000, guid: d9d932583660cb84e8c6c056c8f6a5e1, type: 3}
-  speech: {fileID: 0}
-  intro: {fileID: 0}
-  end: {fileID: 8300000, guid: 26718a7298f18194dacccc49c29d1fb1, type: 3}
   vols:
   - 0.1
   - 0.3

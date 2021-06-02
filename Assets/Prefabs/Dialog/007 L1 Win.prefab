@@ -96,6 +96,30 @@ PrefabInstance:
       value: 007 L1 Win
       objectReference: {fileID: 0}
     - target: {fileID: 3816047415542586535, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
+      propertyPath: speechFX.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816047415542586535, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
+      propertyPath: speechFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ea3e730f7b576934594a437be4570405, type: 3}
+    - target: {fileID: 3816047415542586535, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
+      propertyPath: speechFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f3557a136f81b44d893f678a07f548b, type: 3}
+    - target: {fileID: 3816047415542586535, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
+      propertyPath: speechFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b69aa93105bc334eb47924ebfa93bea, type: 3}
+    - target: {fileID: 3816047415542586535, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
+      propertyPath: speechFX.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b42d5111ec2d7ce43a5430b4b5669692, type: 3}
+    - target: {fileID: 3816047415542586535, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
+      propertyPath: speechFX.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 06cd43e9d71fb984caaeed8bfffcc5d5, type: 3}
+    - target: {fileID: 3816047415542586535, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
       propertyPath: sdialogue.sentences.Array.size
       value: 1
       objectReference: {fileID: 0}

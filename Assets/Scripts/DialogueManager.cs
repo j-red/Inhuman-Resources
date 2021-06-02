@@ -16,8 +16,11 @@ public class DialogueManager : MonoBehaviour {
     private Animator continueAnimator;
 
     [HeaderAttribute ("Audio")]
+    // public List<AudioClip> sounds;
+    // public ArrayList sounds = new ArrayList();
+    public AudioClip[] speechFX;
     public AudioClip next;
-    public AudioClip speech, intro, end;
+    // public AudioClip speech, intro, end;
     // public float[] vols = new float[4]; // default volumes
     public float[] vols = {0.2f, 0.3f, 0.5f, 0.5f}; // default volumes
     
@@ -46,11 +49,6 @@ public class DialogueManager : MonoBehaviour {
 
     void Start() {
         StartDialogue(sdialogue);
-        if (intro != null) {
-            audioSrc.clip = intro;
-            audioSrc.volume = vols[1];
-            audioSrc.Play();
-        }
     }
 
     // Update is called once per frame
@@ -77,13 +75,12 @@ public class DialogueManager : MonoBehaviour {
         if (dialogueActive && Input.GetButtonUp(interactBtn) && !gm.isPaused) {
             if (!wasTypingWhenBtnPressed) {
                 DisplayNextSentence(); // only move to the next sentence if the key was pressed after the dialogue was done typing
-            }
-            
-            if (next != null) {
-                audioSrc.clip = next;
-                audioSrc.volume = vols[0];
-                audioSrc.pitch = 1f;
-                audioSrc.Play();
+                if (next != null) {
+                    audioSrc.clip = next;
+                    audioSrc.volume = vols[0];
+                    audioSrc.pitch = 1f;
+                    audioSrc.Play();
+                }
             }
         }
     }
@@ -132,35 +129,19 @@ public class DialogueManager : MonoBehaviour {
             char letter = chars[i];
 
             if (letter == '<' && chars[i + 1] != '/') { // special format case -- append each letter with the enclosing format code
-                // print("Open format string at index " + i.ToString());
                 formatting = true;
-
-                // dialogueText.text += letter;
                 string tmp = sentence.Substring(i); // substring from current index to end of string
                 int endOfFormatIndex = tmp.IndexOf('>');
-                // print("End of Index Format: " + endOfFormatIndex.ToString());
-                // print("Tmp: " + tmp);
                 format = tmp.Substring(0, endOfFormatIndex + 1); // get format code in use
-
                 tmp = sentence.Substring(i + endOfFormatIndex + 1); // get substr starting at end of open format code
                 int startEndFormat = tmp.IndexOf('<');
                 int endEndFormat = tmp.IndexOf('>') + 1;
-                // print("Start End Format: " + startEndFormat.ToString());
-                // print("End End Format: " + endEndFormat.ToString());
-                // print("TMP: " + tmp);
-                // print("TMP Length: " + tmp.Length.ToString());
-
                 endFormat = tmp.Substring(startEndFormat, endEndFormat - startEndFormat); // get end code for format in use
-
                 i = i + endOfFormatIndex + 1; // set char to first after open format string
                 letter = chars[i];
-
-                // print("Format String: " + format);
-                // print("End format String: " + endFormat);
             }
             
             if (letter == '<' && chars[i + 1] == '/') {
-                // print("Close format string at index " + i.ToString());
                 formatting = false;
                 string tmp = sentence.Substring(i);
                 i = i + tmp.IndexOf('>') + 1;
@@ -177,10 +158,13 @@ public class DialogueManager : MonoBehaviour {
             
 
             audioSrc.pitch = tmpPitch; // reset to original
-            if (speech != null && !audioSrc.isPlaying) {
-                audioSrc.clip = speech;
-                audioSrc.pitch = Random.Range(tmpPitch - pitchModulation, tmpPitch + pitchModulation); // add some noise
-                audioSrc.Play();
+            
+            if (speechFX != null) {
+                if (letter != ' ') { // ignore white space
+                    audioSrc.clip = speechFX[Random.Range(0, speechFX.Length)];
+                    audioSrc.pitch = Random.Range(tmpPitch - pitchModulation, tmpPitch + pitchModulation); // add some noise
+                    audioSrc.Play();
+                }
             }
 
             if (continueAnimator.GetBool("Interacting")) {
@@ -199,12 +183,12 @@ public class DialogueManager : MonoBehaviour {
 
         Destroy(GetComponent<Image>());
 
-        if (end != null) {
-            audioSrc.clip = next;
-            audioSrc.volume = vols[3];
-            audioSrc.pitch = 1f;
-            audioSrc.Play();
-        }
+        // if (end != null) {
+        //     audioSrc.clip = next;
+        //     audioSrc.volume = vols[3];
+        //     audioSrc.pitch = 1f;
+        //     audioSrc.Play();
+        // }
 
         Destroy(this.gameObject, 1); // destroy after 3 seconds
     }
