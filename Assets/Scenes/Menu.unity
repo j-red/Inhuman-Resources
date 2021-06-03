@@ -6855,6 +6855,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4242595706878455619, guid: e4ca165da7bc08843b9232f030f78fba, type: 3}
+      propertyPath: m_Name
+      value: Cable Shadow
+      objectReference: {fileID: 0}
     - target: {fileID: 5741098800249585697, guid: e4ca165da7bc08843b9232f030f78fba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7854143
