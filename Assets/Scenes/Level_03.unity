@@ -8103,7 +8103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 579030932155572498, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
       propertyPath: count
-      value: 99
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 579030932155572498, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
       propertyPath: instant
@@ -8113,6 +8113,10 @@ PrefabInstance:
       propertyPath: targetParent
       value: 
       objectReference: {fileID: 70058274}
+    - target: {fileID: 579030932155572498, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
+      propertyPath: maxChildCount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1902770948726821541, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
       propertyPath: m_Name
       value: AgentSpawner (1)
