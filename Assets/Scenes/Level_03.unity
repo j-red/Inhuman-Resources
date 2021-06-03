@@ -5323,6 +5323,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 9017871629286677054, guid: a702eec262432cf4f8c3d4eb95bfcc21, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223134233149839755, guid: a702eec262432cf4f8c3d4eb95bfcc21, type: 3}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9223134233149839755, guid: a702eec262432cf4f8c3d4eb95bfcc21, type: 3}
       propertyPath: partner
       value: 
@@ -20630,6 +20638,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5790333936122339490, guid: 67ea80febde8e3c4eb8e9b964d0da746, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fc45a85729b27ff43b323f7d72a8ab1e, type: 3}
     - target: {fileID: 5790333936751080360, guid: 67ea80febde8e3c4eb8e9b964d0da746, type: 3}
       propertyPath: m_RootOrder
       value: 3

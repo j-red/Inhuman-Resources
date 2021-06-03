@@ -260,7 +260,8 @@ public class GameManager : MonoBehaviour {
            For now, this simply instantiates a 'Fade to Black' UI Prefab. */
         Instantiate(FadeToBlack, GameObject.Find("Canvas").transform);
         StartCoroutine("FadeAudio");
-        Invoke("LoadMainMenu", 2f);
+        // Invoke("LoadMainMenu", 2f);
+        Invoke("LoadNextScene", 2f);
     }
 
     IEnumerator FadeAudio() {
@@ -284,5 +285,10 @@ public class GameManager : MonoBehaviour {
     public void LoadMainMenu() {
         /* usage: Invoke("LoadMainMenu", 5); // calls this function in 5 seconds */
         SceneManager.LoadScene("Menu");
+    }
+
+    public void LoadNextScene() {
+        // Loads the scene after this one in the Build Settings queue.
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
