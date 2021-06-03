@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 8458645801293601947}
   - component: {fileID: 8650656696700991082}
   - component: {fileID: 8220556945532397069}
+  - component: {fileID: 8711402845043540500}
   m_Layer: 3
   m_Name: Agent (3D)
   m_TagString: Player
@@ -283,8 +284,10 @@ MonoBehaviour:
   bumpSound: {fileID: 8300000, guid: 0f44aefbfe9f55d45817a567cbf1329f, type: 3}
   rescueSound: {fileID: 8300000, guid: 04ebaf0ba88d20b4481f8502b1233f42, type: 3}
   debugMode: 0
+  drawVelocity: 0
   invincible: 0
   noControl: 0
+  noControlTimer: 0
   cameraShake: 0
   shakeAmount: 10
   shakeDuration: 0.02
@@ -311,6 +314,18 @@ AudioReverbFilter:
   m_LFReference: 250
   m_ReflectionsDelay: 0
   m_ReverbPreset: 1
+--- !u!114 &8711402845043540500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650656696700991081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b87f0cae937b644a9a954af7238bd28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8650656697840943051
 GameObject:
   m_ObjectHideFlags: 0
