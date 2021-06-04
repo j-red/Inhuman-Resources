@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour {
     public string counterText = "Agents Recovered: ";
 
     [HeaderAttribute("Setup")]
-    public float goldTime = 30f, silverTime = 60f;
-    public int goldAgents = 80, silverAgents = 50;
     public float gameTime = 0f;
     private Text gameTimer;
 
@@ -96,9 +94,14 @@ public class GameManager : MonoBehaviour {
         gameTimer = GameObject.Find("Game Timer").GetComponent<Text>();
     }
 
+    public bool stopTime = false;
+    public void StopTimer() {
+        stopTime = true;
+    }
+
     // Update is called once per frame
     void Update() {
-        if (!isPaused && !hasWon) {
+        if ((!isPaused && !hasWon && !stopTime)) {
             gameTime += Time.deltaTime; // increment game time clock whenever unpaused
             string fmat = "D2"; // use 2 leading zeros in timer text
 
@@ -227,7 +230,6 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Win() {
-        // print("You won!");
         hasWon = true;
 
         dialogTrigger.Win();

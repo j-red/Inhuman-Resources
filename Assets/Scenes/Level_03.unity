@@ -3027,6 +3027,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.022, y: 0.009710731, z: 0.03410001}
   m_Center: {x: -7.2144443e-16, y: -0.0030052545, z: -2.4027319e-21}
+--- !u!1 &364670334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8365907309095253864, guid: 57ace793e6f846249bcd4549b1c37613, type: 3}
+  m_PrefabInstance: {fileID: 484820038284185036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &364951772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4094,6 +4099,8 @@ GameObject:
   - component: {fileID: 456183503}
   - component: {fileID: 456183502}
   - component: {fileID: 456183504}
+  - component: {fileID: 456183505}
+  - component: {fileID: 456183506}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -4134,10 +4141,6 @@ MonoBehaviour:
   maxCt: 100
   numToWin: 999
   counterText: 'Agents Recovered: '
-  goldTime: 30
-  silverTime: 60
-  goldAgents: 80
-  silverAgents: 50
   gameTime: 0
   debugMode: 0
   frameDelay: 10
@@ -4175,7 +4178,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introText: {fileID: 5053857458628252332, guid: 3d6df177a3022e340b697c794b96d16e, type: 3}
   loseText: {fileID: 5053857458628252332, guid: c723cf183163c2f4fa79ee031f427b9b, type: 3}
-  winText: {fileID: 5053857458628252332, guid: 14ecc580e034ec443a9e1da3dc0391fc, type: 3}
+  winText: {fileID: 5053857458628252332, guid: c723cf183163c2f4fa79ee031f427b9b, type: 3}
+--- !u!114 &456183505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456183501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db702c1b26057014090b300443324ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  twoStarTime: 90
+  threeStarTime: 60
+  stars: {fileID: 484820038284185037}
+  continueText: {fileID: 364670334}
+--- !u!114 &456183506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456183501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a0041c3a32ad04c8bb100217626f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &466395971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20498,6 +20529,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ace793e6f846249bcd4549b1c37613, type: 3}
+--- !u!1 &484820038284185037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7597978529834984822, guid: 57ace793e6f846249bcd4549b1c37613, type: 3}
+  m_PrefabInstance: {fileID: 484820038284185036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2940961714034579872
 PrefabInstance:
   m_ObjectHideFlags: 0

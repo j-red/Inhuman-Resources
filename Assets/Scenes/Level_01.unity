@@ -3225,6 +3225,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ace793e6f846249bcd4549b1c37613, type: 3}
+--- !u!1 &443195886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7597978529834984822, guid: 57ace793e6f846249bcd4549b1c37613, type: 3}
+  m_PrefabInstance: {fileID: 443195885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &443195887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8365907309095253864, guid: 57ace793e6f846249bcd4549b1c37613, type: 3}
+  m_PrefabInstance: {fileID: 443195885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &456183501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,6 +3246,7 @@ GameObject:
   - component: {fileID: 456183503}
   - component: {fileID: 456183502}
   - component: {fileID: 456183504}
+  - component: {fileID: 456183505}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -3276,10 +3287,6 @@ MonoBehaviour:
   maxCt: 100
   numToWin: 30
   counterText: 'Agents Recovered: '
-  goldTime: 30
-  silverTime: 60
-  goldAgents: 80
-  silverAgents: 50
   gameTime: 0
   debugMode: 0
   frameDelay: 10
@@ -3317,6 +3324,22 @@ MonoBehaviour:
   introText: {fileID: 4716844967446488543, guid: df824ea8f5f19bd48a4ae409cacd6429, type: 3}
   loseText: {fileID: 3816047415542586533, guid: 5c27ba26fc57fe345a1d696a85370034, type: 3}
   winText: {fileID: 7741608053931048786, guid: e1be41c81a18bd549be4cfd4e466e67e, type: 3}
+--- !u!114 &456183505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456183501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db702c1b26057014090b300443324ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  twoStarTime: 70
+  threeStarTime: 35
+  stars: {fileID: 443195886}
+  continueText: {fileID: 443195887}
 --- !u!1001 &466622129
 PrefabInstance:
   m_ObjectHideFlags: 0
