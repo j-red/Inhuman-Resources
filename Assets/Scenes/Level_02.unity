@@ -2952,6 +2952,7 @@ MonoBehaviour:
   frameDelay: 10
   randomOffset: 0.1
   EndGameDialogue: {fileID: 3816047415542586533, guid: a1cd8bb6f20f1fa48bc733a698c31474, type: 3}
+  stopTime: 0
 --- !u!4 &456183503
 Transform:
   m_ObjectHideFlags: 0
@@ -12891,7 +12892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 579030932155572498, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
       propertyPath: count
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 579030932155572498, guid: 086dcd080a842c64084fdf2c8de338ec, type: 3}
       propertyPath: instant
