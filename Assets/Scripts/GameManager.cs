@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField, Range(0, 1f)]
     private float randomOffset = 0.1f;
     private DialogueTrigger dialogTrigger;
+    private RewardTrigger rewardTrigger;
     private float endGameTimer = 0f;
     private bool hasEnded = false;
     public GameObject EndGameDialogue;
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour {
         dialogTrigger = GetComponent<DialogueTrigger>();
         dialogTrigger.Intro();
 
+        rewardTrigger = GetComponent<RewardTrigger>();
         gameTimer = GameObject.Find("Game Timer").GetComponent<Text>();
     }
 
@@ -229,6 +231,7 @@ public class GameManager : MonoBehaviour {
         hasWon = true;
 
         dialogTrigger.Win();
+        rewardTrigger.Win();
 
         Instantiate(confetti, GameObject.Find("Goal Zone").transform.position, Quaternion.identity);
         return;
